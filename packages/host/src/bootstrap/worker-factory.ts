@@ -7,10 +7,7 @@ export interface WorkerClientRef {
   client: IpcClient;
   baseKey: string;
   isIndexer: boolean;
-  initPayload: Extract<
-    import("../types").HostRequest,
-    { type: "initWorker" }
-  >["payload"];
+  initPayload: Extract<import("../types").HostRequest, { type: "initWorker" }>["payload"];
 }
 
 export async function createWorkerClient(

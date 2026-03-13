@@ -1,10 +1,7 @@
 import Sidecar from "bare-sidecar";
 import type { HostRequest, WorkerMessage } from "./types";
 
-type MessageOfType<TType extends WorkerMessage["type"]> = Extract<
-  WorkerMessage,
-  { type: TType }
->;
+type MessageOfType<TType extends WorkerMessage["type"]> = Extract<WorkerMessage, { type: TType }>;
 
 type PendingRequest = {
   expectedType: WorkerMessage["type"];
@@ -68,8 +65,7 @@ export class IpcClient {
         const message = JSON.parse(trimmed) as WorkerMessage;
         this.dispatch(message);
       } catch (error) {
-        const message =
-          error instanceof Error ? error.message : "Invalid worker JSON";
+        const message = error instanceof Error ? error.message : "Invalid worker JSON";
         console.error(`[worker] failed to parse message: ${message}`);
       }
     }
@@ -191,12 +187,8 @@ export class IpcClient {
     );
   }
 
-  on(
-    type: WorkerMessage["type"],
-    listener: (message: WorkerMessage) => void,
-  ): () => void {
-    const bucket =
-      this.listeners.get(type) ?? new Set<(message: WorkerMessage) => void>();
+  on(type: WorkerMessage["type"], listener: (message: WorkerMessage) => void): () => void {
+    const bucket = this.listeners.get(type) ?? new Set<(message: WorkerMessage) => void>();
     bucket.add(listener);
     this.listeners.set(type, bucket);
 

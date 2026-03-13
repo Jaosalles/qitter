@@ -111,10 +111,7 @@ describe("multi-peer synchronization", () => {
       await waitFor(async () => {
         await baseB.update();
         const posts = await listAllPostsFromBase(baseB);
-        return posts.some(
-          (post) =>
-            post.id === "peer-sync-1" && post.body === "hello from peer a",
-        );
+        return posts.some((post) => post.id === "peer-sync-1" && post.body === "hello from peer a");
       }, 8000);
 
       const postsOnPeerB = await listAllPostsFromBase(baseB);

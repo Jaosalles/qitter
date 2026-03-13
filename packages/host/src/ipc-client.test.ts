@@ -83,11 +83,7 @@ describe("IpcClient", () => {
     const client = new IpcClient("worker.js");
     const sidecar = getSidecar();
 
-    const promise = client.requestByType(
-      { type: "listPosts" },
-      "postList",
-      2000,
-    );
+    const promise = client.requestByType({ type: "listPosts" }, "postList", 2000);
     const requestId = getLastWrittenRequestId(sidecar);
 
     sidecar.emitData(
@@ -147,11 +143,7 @@ describe("IpcClient", () => {
     const client = new IpcClient("worker.js");
     const sidecar = getSidecar();
 
-    const promise = client.requestByType(
-      { type: "listPosts" },
-      "postList",
-      2000,
-    );
+    const promise = client.requestByType({ type: "listPosts" }, "postList", 2000);
     const requestId = getLastWrittenRequestId(sidecar);
 
     sidecar.emitData(
@@ -228,11 +220,7 @@ describe("IpcClient", () => {
   it("rejects pending requests when worker is reinitialized", async () => {
     const client = new IpcClient("worker.js");
 
-    const pending = client.requestByType(
-      { type: "listPosts" },
-      "postList",
-      2000,
-    );
+    const pending = client.requestByType({ type: "listPosts" }, "postList", 2000);
 
     const readyPromise = client.reinitialize(
       {

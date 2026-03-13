@@ -73,17 +73,11 @@ export class LocalLlmProvider implements LlmProvider {
     return localIdentity(agentNumber);
   }
 
-  async generatePost(
-    identity: AgentIdentity,
-    recentPosts: Post[],
-  ): Promise<string> {
+  async generatePost(identity: AgentIdentity, recentPosts: Post[]): Promise<string> {
     return localPost(identity, recentPosts);
   }
 
-  async generateComment(
-    identity: AgentIdentity,
-    targetPost: Post,
-  ): Promise<string> {
+  async generateComment(identity: AgentIdentity, targetPost: Post): Promise<string> {
     return localComment(identity, targetPost);
   }
 }

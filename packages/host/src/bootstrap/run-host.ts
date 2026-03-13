@@ -5,10 +5,7 @@ import { loadHostConfig } from "../config";
 import { InteractiveAgentGateway } from "../interactive-agent";
 import { logError, logInfo, logWarn } from "../observability/logger";
 import { startApiServer } from "../server";
-import {
-  loadOrCreateBootstrapKey,
-  writeBootstrapKeyIfMissing,
-} from "./bootstrap-key";
+import { loadOrCreateBootstrapKey, writeBootstrapKeyIfMissing } from "./bootstrap-key";
 import { getModeFromCli, getTopicHex } from "./cli";
 import { type WorkerClientRef, createWorkerClient } from "./worker-factory";
 
@@ -34,8 +31,7 @@ function startWorkerHeartbeat(ref: WorkerClientRef, label: string): () => void {
         HEARTBEAT_TIMEOUT_MS,
       );
     } catch (error) {
-      const message =
-        error instanceof Error ? error.message : "unknown heartbeat failure";
+      const message = error instanceof Error ? error.message : "unknown heartbeat failure";
       logWarn("worker heartbeat failed", { label, message });
 
       try {
@@ -49,9 +45,7 @@ function startWorkerHeartbeat(ref: WorkerClientRef, label: string): () => void {
         });
       } catch (recoveryError) {
         const recoveryMessage =
-          recoveryError instanceof Error
-            ? recoveryError.message
-            : "unknown recovery failure";
+          recoveryError instanceof Error ? recoveryError.message : "unknown recovery failure";
         logError("worker recovery failed", { label, message: recoveryMessage });
       }
     } finally {
@@ -96,13 +90,7 @@ export async function runHost(): Promise<void> {
   let primaryWriter: WorkerClientRef | null = null;
 
   if (mode === "bootstrap") {
-    primaryWriter = await createWorkerClient(
-      "indexer-1",
-      topic,
-      initialBootstrap,
-      "writer",
-      true,
-    );
+    primaryWriter = await createWorkerClient("indexer-1", topic, initialBootstrap, "writer", true);
     bootstrapKey = initialBootstrap ?? primaryWriter.baseKey;
 
     logInfo("primary writer ready", {
@@ -123,12 +111,7 @@ export async function runHost(): Promise<void> {
     throw new Error("Failed to determine bootstrap key.");
   }
 
-  const apiWorker = await createWorkerClient(
-    "api",
-    topic,
-    bootstrapKey,
-    "reader",
-  );
+  const apiWorker = await createWorkerClient("api", topic, bootstrapKey, "reader");
 
   const interactiveWriter = await createWorkerClient(
     mode === "join" ? `interactive-ui-${Date.now()}` : "interactive-ui",
@@ -142,10 +125,7 @@ export async function runHost(): Promise<void> {
     keyPrefix: interactiveWriter.baseKey.slice(0, 12),
   });
 
-  const interactiveAgent = new InteractiveAgentGateway(
-    interactiveWriter.client,
-    apiWorker.client,
-  );
+  const interactiveAgent = new InteractiveAgentGateway(interactiveWriter.client, apiWorker.client);
 
   const apiServer = startApiServer(apiWorker.client, interactiveAgent, port);
 
@@ -164,9 +144,7 @@ export async function runHost(): Promise<void> {
   const stopHeartbeats: Array<() => void> = [];
 
   stopHeartbeats.push(startWorkerHeartbeat(apiWorker, "api"));
-  stopHeartbeats.push(
-    startWorkerHeartbeat(interactiveWriter, "interactive-writer"),
-  );
+  stopHeartbeats.push(startWorkerHeartbeat(interactiveWriter, "interactive-writer"));
 
   const agents: AgentRunner[] = [];
 
@@ -198,29 +176,19 @@ export async function runHost(): Promise<void> {
         keyPrefix: secondaryWriter.baseKey.slice(0, 12),
       });
 
-      const runner2 = new AgentRunner(
-        secondaryWriter.client,
-        apiWorker.client,
-        2,
-      );
+      const runner2 = new AgentRunner(secondaryWriter.client, apiWorker.client, 2);
 
       agents.push(runner2);
       resourcesToShutdown.push(async () => {
         await secondaryWriter.client.shutdown();
       });
-      stopHeartbeats.push(
-        startWorkerHeartbeat(secondaryWriter, "secondary-writer"),
-      );
+      stopHeartbeats.push(startWorkerHeartbeat(secondaryWriter, "secondary-writer"));
 
       setTimeout(() => {
         void runner2.start();
       }, 12000);
     } else {
-      const runner2 = new AgentRunner(
-        primaryWriter.client,
-        apiWorker.client,
-        2,
-      );
+      const runner2 = new AgentRunner(primaryWriter.client, apiWorker.client, 2);
       agents.push(runner2);
 
       setTimeout(() => {
@@ -263,8 +231,7 @@ export async function runHost(): Promise<void> {
       try {
         await close();
       } catch (error) {
-        const message =
-          error instanceof Error ? error.message : "unknown shutdown error";
+        const message = error instanceof Error ? error.message : "unknown shutdown error";
         logError("host shutdown error", { message });
       }
     }
