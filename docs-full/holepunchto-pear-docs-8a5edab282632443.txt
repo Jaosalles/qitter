@@ -1,0 +1,4892 @@
+Directory structure:
+└── holepunchto-pear-docs/
+    ├── SUMMARY.md
+    ├── .npmrc
+    ├── building-blocks/
+    │   ├── autobase.md
+    │   ├── hyperbee.md
+    │   ├── hypercore.md
+    │   ├── hyperdht.md
+    │   ├── hyperdrive.md
+    │   └── hyperswarm.md
+    ├── guide/
+    │   ├── creating-a-pear-init-template.md
+    │   ├── debugging-a-pear-terminal-app.md
+    │   ├── getting-started.md
+    │   ├── making-a-bare-mobile-app.md
+    │   ├── making-a-pear-desktop-app.md
+    │   ├── making-a-pear-terminal-app.md
+    │   ├── releasing-a-pear-app.md
+    │   ├── sharing-a-pear-app.md
+    │   ├── starting-a-pear-desktop-project.md
+    │   └── starting-a-pear-terminal-project.md
+    ├── helpers/
+    │   ├── compact-encoding.md
+    │   ├── corestore.md
+    │   ├── localdrive.md
+    │   ├── mirrordrive.md
+    │   ├── protomux.md
+    │   └── secretstream.md
+    ├── howto/
+    │   ├── connect-to-many-peers-by-topic-with-hyperswarm.md
+    │   ├── connect-two-peers-by-key-with-hyperdht.md
+    │   ├── create-a-full-peer-to-peer-filesystem-with-hyperdrive.md
+    │   ├── replicate-and-persist-with-hypercore.md
+    │   ├── share-append-only-databases-with-hyperbee.md
+    │   └── work-with-many-hypercores-using-corestore.md
+    ├── reference/
+    │   ├── api.md
+    │   ├── bare-overview.md
+    │   ├── cli.md
+    │   ├── configuration.md
+    │   ├── faq.md
+    │   ├── migration.md
+    │   ├── node-compat.md
+    │   ├── recommended-practices.md
+    │   ├── templates.md
+    │   └── troubleshooting.md
+    └── tools/
+        ├── drives.md
+        ├── hyperbeam.md
+        ├── hypershell.md
+        ├── hyperssh.md
+        └── hypertele.md
+
+================================================
+FILE: SUMMARY.md
+================================================
+# Table of contents
+
+* [Pear by Holepunch](./README.md)
+
+### Reference
+
+* [Pear CLI](./reference/cli.md)
+* [Pear Application Configuration](./reference/configuration.md)
+* [Bare Overview](./reference/bare-overview.md)
+* [API](./reference/api.md)
+* [Templates](./reference/templates.md)
+* [Node.js Compatibility](./reference/node-compat.md)
+* [Recommended Practices](./reference/recommended-practices.md)
+* [Troubleshooting](./reference/troubleshooting.md)
+* [Frequently Asked Questions](./reference/faq.md)
+* [Migration](./reference/migration.md)
+
+### Guides
+
+* [Getting Started](./guide/getting-started.md)
+* [Starting a Pear Desktop Project](./guide/starting-a-pear-desktop-project.md)
+* [Making a Pear Desktop Application](./guide/making-a-pear-desktop-app.md)
+* [Starting a Pear Terminal Project](./guide/starting-a-pear-terminal-project.md)
+* [Making a Pear Terminal Application](./guide/making-a-pear-terminal-app.md)
+* [Sharing a Pear Application](./guide/sharing-a-pear-app.md)
+* [Releasing a Pear Application](./guide/releasing-a-pear-app.md)
+* [Making a Bare Mobile Application](./guide/making-a-bare-mobile-app.md)
+* [Debugging a Pear Terminal Application](./guide/debugging-a-pear-terminal-app.md)
+* [Creating a `pear init` Template](./guide/creating-a-pear-init-template.md)
+
+### How-tos
+
+* [Connect two peers](./howto/connect-two-peers-by-key-with-hyperdht.md)
+* [Connect many peers](./howto/connect-to-many-peers-by-topic-with-hyperswarm.md)
+* [Replicate & persist](./howto/replicate-and-persist-with-hypercore.md)
+* [Manage multiple Hypercores](./howto/work-with-many-hypercores-using-corestore.md)
+* [Share append-only databases](./howto/share-append-only-databases-with-hyperbee.md)
+* [Create a p2p filesystem](./howto/create-a-full-peer-to-peer-filesystem-with-hyperdrive.md)
+
+### Pear Modules
+
+* [Application Libraries](./README.md#application-libraries)
+* [User Interface Libraries](./README.md#user-interface-libraries)
+* [Common Libraries](./README.md#common-libraries)
+* [Developer Libraries](./README.md#developer-libraries)
+* [Integration Libraries](./README.md#integration-libraries)
+
+### P2P Modules
+
+* [Building-Block Libraries](./README.md#building-blocks)
+* [Helper Libraries](./README.md#helpers)
+
+### Building blocks
+
+* [Hypercore](./building-blocks/hypercore.md)
+* [Hyperbee](./building-blocks/hyperbee.md)
+* [Hyperdrive](./building-blocks/hyperdrive.md)
+* [Autobase](./building-blocks/autobase.md)
+* [HyperDHT](./building-blocks/hyperdht.md)
+* [Hyperswarm](./building-blocks/hyperswarm.md)
+
+### Helpers
+
+* [Corestore](./helpers/corestore.md)
+* [Localdrive](./helpers/localdrive.md)
+* [Mirrordrive](./helpers/mirrordrive.md)
+* [Secretstream](./helpers/secretstream.md)
+* [Compact encoding](./helpers/compact-encoding.md)
+* [Protomux](./helpers/protomux.md)
+
+### Bare Modules
+
+* [Standard Libraries](./README.md#bare-modules)
+
+### Tools
+
+* [Tool List](./README.md#tools)
+* [Hypershell](./tools/hypershell.md)
+* [Hypertele](./tools/hypertele.md)
+* [Hyperbeam](./tools/hyperbeam.md)
+* [Hyperssh](./tools/hyperssh.md)
+* [Drives](./tools/drives.md)
+
+### Examples<a name="examples"></a>
+
+- [Pear Terminal](https://github.com/holepunchto/pear/tree/main/examples/terminal)
+- [Pear Desktop (Electron)](https://github.com/holepunchto/pear/tree/main/examples/desktop)
+- [Bare Android](https://github.com/holepunchto/bare-android)
+- [Bare iOS](https://github.com/holepunchto/bare-ios)
+
+
+
+================================================
+FILE: .npmrc
+================================================
+package-lock=false
+
+
+================================================
+FILE: building-blocks/autobase.md
+================================================
+[https://github.com/holepunchto/autobase](https://github.com/holepunchto/autobase)
+
+
+
+================================================
+FILE: building-blocks/hyperbee.md
+================================================
+[https://github.com/holepunchto/hyperbee](https://github.com/holepunchto/hyperbee)
+
+
+
+================================================
+FILE: building-blocks/hypercore.md
+================================================
+[https://github.com/holepunchto/hypercore](https://github.com/holepunchto/hypercore)
+
+
+
+================================================
+FILE: building-blocks/hyperdht.md
+================================================
+[https://github.com/holepunchto/hyperdht](https://github.com/holepunchto/hyperdht)
+
+
+
+================================================
+FILE: building-blocks/hyperdrive.md
+================================================
+[https://github.com/holepunchto/hyperdrive](https://github.com/holepunchto/hyperdrive)
+
+
+
+================================================
+FILE: building-blocks/hyperswarm.md
+================================================
+[https://github.com/holepunchto/hyperswarm](https://github.com/holepunchto/hyperswarm)
+
+
+
+================================================
+FILE: guide/creating-a-pear-init-template.md
+================================================
+# Creating a Pear Init Template
+
+This guides describes how to create a [`pear init`](../reference/cli.md#pear-init) template which can be used to initialize a new Pear application. 
+
+## Folder Structure
+
+A template can be initialized from a local directory or P2P (Peer-to-Peer) using a `pear://` link.
+
+A template folder should contain : 
+* a `_template.json` file which describes the prompt structure.
+* a `package.json` file which contains config parameters to be populated from the prompts.
+
+> Note that optionally, if the `package.json` of the parent contains a `main` field it should specify a `__main__` file and a `main` parameter in the `_template.json` file. 
+
+Create a template folder called `example` in the project directory, inside the folder create the new files. 
+
+```bash
+mkdir example
+cd example
+touch index.html package.json _template.json
+```
+
+## Template Structure 
+
+Let's define the prompt structure in `_template.json`
+
+### Parameter Object
+
+Each parameter object in the `params` array defines a specific input parameter. 
+
+```json
+{
+  "params": [
+      {
+        "name": "name",
+        "prompt": "name"
+      }
+    // parameter objects....
+  ]
+}
+```
+
+Here are the possible fields for a parameter object:
+
+### Required Fields
+
+- `name` (string): The identifier for the parameter. This should be unique within the template.
+- `prompt` (string): The text prompt that will be displayed to the user when asking for input for this parameter.
+
+### Optional Fields
+
+- `default` (any): The default value for the parameter if no input is provided.
+- `validation` (string): A JavaScript function as a string that validates the input. It should return `true` for valid input and `false` for invalid input.
+- `msg` (string): An error message to display if the validation fails.
+
+### Example
+
+Here's an example of a complete parameter object:
+
+```json
+{
+  "name": "main",
+  "default": "index.html",
+  "prompt": "Enter the main HTML file name",
+  "validation": "(value) => value.endsWith('.html')",
+  "msg": "must have an .html file extension"
+}
+```
+
+This parameter:
+- Has the name "main"
+- Defaults to "index.html" if no input is provided
+- Prompts the user to enter the main HTML file name
+- Validates that the input ends with ".html"
+- Displays an error message if the validation fails
+
+Replace the contents of `_template.json` with 
+
+```json
+{
+  "params": [
+    {
+      "name": "name",
+      "prompt": "name"
+    },
+    {
+      "name": "main",
+      "default": "index.html",
+      "prompt": "main",
+      "validation": "(value) => value.endsWith('.html')",
+      "msg": "must have an .html file extension"
+    },
+    {
+      "name": "height",
+      "validation": "(value) => Number.isInteger(+value)",
+      "prompt": "height",
+      "msg": "must be an integer"
+    },
+    {
+      "name": "width",
+      "validation": "(value) => Number.isInteger(+value)",
+      "prompt": "width",
+      "msg": "must be an integer"
+    },
+    {
+      "name": "license",
+      "default": "Apache-2.0",
+      "prompt": "license"
+    }
+  ]
+}
+```
+
+## App Content
+
+Replace the contents of `index.html` file with :
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body > h1:nth-of-type(1) {
+      cursor: pointer
+    }
+
+    body {
+      --title-bar-height: 42px;
+      padding-top: var(--title-bar-height);
+      background-color: #001601;
+      font-family: monospace;
+    }
+
+    h1 {
+      color: antiquewhite;
+    }
+
+    #bar {
+      background: rgba(55, 60, 72, 0.6);
+      backdrop-filter: blur(64px);
+      -webkit-app-region: drag;
+      height: var(--title-bar-height);
+      padding: 0;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      color: #FFF;
+      white-space: nowrap;
+      box-sizing: border-box;
+      position: fixed;
+      z-index: 2;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    pear-ctrl[data-platform=darwin] {
+      margin-top: 18px;
+      margin-left: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="bar"><pear-ctrl></pear-ctrl></div>
+  <h1>Initialized from a Pear Template</h1>
+</body>
+</html>
+```
+
+Temporarily set the contents of `package.json` to:
+
+```json
+{
+  "pear": {
+    "name": "pear-init-template-tutorial",
+    "type": "desktop"
+  }
+}
+```
+
+This is the minimal requirements for a Pear Application `package.json` to run.
+This will allow us to test the template's `index.html` as a pear desktop
+app.
+
+Run the application using:
+
+```bash
+pear run --dev .
+```
+
+![Layout of the app](../assets/pear-init.png)
+
+## Config file
+
+Replace the contents of `package.json` with :
+
+```json
+{
+  "name": "__name__",
+  "pear": {
+    "name": "__name__",
+    "type": "desktop",
+    "gui": {
+      "backgroundColor": "#1F2430",
+      "height": "__height__",
+      "width": "__width__"
+    }
+  },
+  "type": "module",
+  "license": "__license__",
+  "scripts": {
+    "dev": "pear run -d .",
+    "test": "brittle test/*.test.js"
+  },
+  "devDependencies": {
+    "brittle": "^3.0.0",
+    "pear-interface": "^1.0.0"
+  }
+}
+```
+> Note that any field that is supposed to be populated from the prompts has the value surrounded by double underscores i.e `__fieldName__`
+
+## Initializing a new project
+
+Go to a new project directory and use `pear init` to initialize from the created template.
+
+Run the following command :
+
+```bash
+pear init [dir]
+```
+
+Here replace `[dir]` with the local template directory path. This can also be a `pear://` link.
+
+This should now initialize a new Pear project from the created template.
+
+
+
+================================================
+FILE: guide/debugging-a-pear-terminal-app.md
+================================================
+# Debugging A Pear Terminal Application
+
+Debugging Pear Terminal Applications is different than debugging Desktop Applications because they do not come with a UI. Instead a few steps are needed.
+
+Use [Pear Inspect](https://github.com/holepunchto/pear-inspect) together with the Pear Runtime Desktop and use any tool that supports DevTools like Chrome.
+
+## Step 1. Install pear-inspect
+
+First install `pear-inspect`:
+
+```
+npm install pear-inspect
+```
+
+## Step 2. Add Code
+
+This code should run as the first thing in the application:
+
+``` js
+if (Pear.config.dev) {
+  const { Inspector } = await import('pear-inspect')
+  const inspector = await new Inspector()
+  const key = await inspector.enable()
+  console.log(`Debug with pear://runtime/devtools/${key.toString('hex')}`)
+}
+```
+
+## Step 3. Run In Dev Mode
+
+As the code specifies, `pear-inspect` is only running when in dev mode, so start the app:
+
+```
+pear run --dev .
+```
+
+The application will output something similar to:
+
+```
+Debug with pear://runtime/devtools/a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2
+```
+
+## Step 4. Add to Pear Runtime Desktop
+
+Open the Pear Runtime Desktop app by running `pear run pear://runtime`. Then go to `Developer Tooling` and paste in the key.
+
+Note that the key can also be sent to someone else and they can debug the app remotely.
+
+## Step 5. Open in Chrome
+
+Click on `Open in Chrome` or copy the link into a tool that support DevTools.
+
+
+
+================================================
+FILE: guide/getting-started.md
+================================================
+# Getting Started with Pear
+
+Pear Runtime can be installed via [npm](https://www.npmjs.com/).
+
+Since `npm` (or equivalent package manager) is needed to install application dependencies this guide will walk through installing `pear` with `npm`.
+
+{% embed url="https://www.youtube.com/watch?v=y2G97xz78gU" %} Build with Pear - Episode 01: Developing with Pear {% embeded %}
+
+## Requirements
+
+Pear runs on Windows, Mac and Linux.
+
+Linux requires the `libatomic` library which can be installed using:
+
+Debian/Ubuntu:
+
+```console
+sudo apt install libatomic1
+```
+
+RHEL/CentOS:
+
+```console
+sudo yum install libatomic
+```
+
+Fedora:
+
+```console
+sudo dnf install libatomic
+```
+
+Alpine Linux:
+
+```console
+sudo apk add libatomic
+```
+
+Arch Linux:
+
+```console
+sudo pacman -S libatomic_ops
+```
+
+The `pear` CLI can be installed from [npm](https://www.npmjs.com/), which comes with [`node`](https://nodejs.org/en/about).
+
+The `npm` package manager can also be used to install application dependencies later on.
+
+On MacOS and Linux, we recommend installing `node` using [`nvm`](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+On Windows we recommend installing `node` with [`nvs`](https://github.com/jasongin/nvs#setup).
+
+> The Pear Runtime does not rely on `node`, `node` is only needed to install and run the `npm` package manager.
+
+## Setup
+
+To install Pear run the following command:
+
+```sh
+npm i -g pear
+```
+
+To complete the setup, run the `pear` command.
+
+```
+pear
+```
+
+If a Pear application, such as [Keet](https://keet.io), is already installed then the Pear platform is already available. In this case, running `pear` should show help output.
+
+If not, the first run of `pear` will fetch the platform from peers, after which running `pear` again should output help information.
+
+To check that Pear is fully working, try the following command:
+
+```
+pear run pear://keet
+```
+
+Pear loads applications from peers, so this command should open [Keet](https://keet.io) whether or not it was downloaded and installed beforehand.
+
+
+## Next
+
+* [Starting a Pear Desktop Project](./starting-a-pear-desktop-project.md)
+* [Starting a Pear Terminal Project](./starting-a-pear-terminal-project.md)
+
+
+
+================================================
+FILE: guide/making-a-bare-mobile-app.md
+================================================
+# Making a Bare Mobile Application
+
+This guide demonstrates how to build and run a mobile application using [Bare and Expo](https://github.com/holepunchto/bare-expo).
+
+We will be building an application that syncs data from the [Pearpass desktop application](https://github.com/holepunchto/pearpass-example/) using [autopass](https://github.com/holepunchto/autopass) and displaying a list of the passwords on mobile.
+
+## Project Dependencies
+
+1. Gradle version 8.10.2
+2. Java 23
+3. Android SDK (>= 29), NDK
+
+## Project Setup
+
+We will use the `bare-expo` template to build our application. To get started, first clone it with git in a new directory:
+
+```bash
+git clone https://github.com/holepunchto/bare-expo.git autopass-mobile-example
+```
+
+Change to the project directory:
+
+```bash
+cd autopass-mobile-example
+```
+
+And install the dependencies we will need:
+
+```bash
+npm i b4a bare-fs bare-rpc corestore autopass @react-native-clipboard/clipboard graceful-goodbye
+```
+
+```bash
+npm i bare-pack @types/b4a --save-dev
+```
+
+## Directory Structure
+
+`bare-expo` is a basic template for getting started with Bare applications on mobile. To build a "Pear-end", where the peer-to-peer (P2P) code of the application is run, we will change the directory structure a bit adding a dedicated directory for the Pear-end.
+
+Create a new directory called `backend`. This is where we will store our Pear-end code that will be run by Bare.
+
+```bash
+mkdir backend
+```
+
+Create a new file `backend.mjs` in the `backend` directory, we will use this file as the entry point for anything P2P. All Bare code should be used here.
+
+```bash
+touch backend/backend.mjs
+```
+
+Our React Native UI code will go in the existing `app/index.tsx` file.
+
+Finally we will use an RPC to communicate between React Native and the Pear-end.
+To define a common set of command ids we create a `rpc-commands.mjs`.
+
+```bash
+touch rpc-commands.mjs
+```
+
+## Building the Application
+
+### Building the UI
+
+The `app/index.tsx` file that came with the `bare-expo` template serves as the entry point of the UI of the React Native app.
+
+Replace the contents of `app/index.tsx` with:
+
+```typescript
+import React, { useState } from 'react'
+import {
+  View,
+  Text,
+  TextInput,
+  Button,
+  FlatList,
+  Alert,
+  StyleSheet
+} from 'react-native'
+import { documentDirectory } from 'expo-file-system'
+import Clipboard from '@react-native-clipboard/clipboard'
+import { Worklet } from 'react-native-bare-kit'
+import bundle from './app.bundle.mjs'
+import RPC from 'bare-rpc'
+import b4a from 'b4a'
+import { RPC_RESET, RPC_MESSAGE } from '../rpc-commands.mjs'
+
+type PasswordEntry = {
+  username: string
+  password: string
+  website: string
+}
+
+export default function App() {
+  const [dataList, setDataList] = useState<PasswordEntry[]>([])
+  const [pairingInvite, setPairingInvite] = useState('') // State for pairing invite
+  const [isWorkletStarted, setIsWorkletStarted] = useState(false) // State to track worklet status
+
+  const startWorklet = () => {
+    const worklet = new Worklet()
+
+    // Correctly passing the args to worklet.start
+    worklet.start('/app.bundle', bundle, [String(documentDirectory), pairingInvite])
+    const { IPC } = worklet
+    // Initialise RPC
+    new RPC(IPC, (req) => {
+      // Handle incoming RPC requests
+
+      if (req.command === RPC_MESSAGE) {
+        const data = b4a.toString(req.data)
+        const parsedData = JSON.parse(data) // Assuming data is a JSON string
+        const entry: PasswordEntry = {
+          username: parsedData[1],
+          password: parsedData[2],
+          website: parsedData[3]
+        }
+        // Update the dataList with the received entry
+        setDataList((prevDataList) => [...prevDataList, entry])
+      }
+
+      if (req.command === RPC_RESET) {
+        setDataList(() => [])
+      }
+    })
+
+    setIsWorkletStarted(true) // Mark worklet as started
+  }
+
+  const copyToClipboard = (item: PasswordEntry) => {
+    Clipboard.setString(item.password) // Copy password to clipboard
+    Alert.alert('Copied to Clipboard', item.password)
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.heading}>Autopass-example 🍐</Text>
+      {!isWorkletStarted ? ( // Show input if worklet hasn't started
+        <>
+          <TextInput
+            style={styles.input}
+            placeholder='Enter Pairing Invite'
+            value={pairingInvite}
+            onChangeText={setPairingInvite}
+          />
+          <Button title='Submit' onPress={startWorklet} color='#b0d943' />
+        </>
+      ) : (
+        <FlatList
+          data={dataList}
+          keyExtractor={(_, index) => index.toString()}
+          renderItem={({ item }) => (
+            <View style={styles.dataItem}>
+              <Text style={styles.itemText}>Username: {item.username}</Text>
+              <Text style={styles.itemText}>Password: {item.password}</Text>
+              <Text style={styles.itemText}>Website: {item.website}</Text>
+              <Button
+                title='Copy Password'
+                onPress={() => copyToClipboard(item)}
+                color='#b0d943'
+              />
+            </View>
+          )}
+        />
+      )}
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#011501',
+    padding: 20
+  },
+  heading: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#b0d943',
+    textAlign: 'center',
+    marginBottom: 20
+  },
+  input: {
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    marginBottom: 10,
+    paddingHorizontal: 10,
+    color: '#333'
+  },
+  dataItem: {
+    padding: 10,
+    backgroundColor: '#f0f0f0',
+    marginVertical: 5,
+    borderRadius: 5
+  },
+  itemText: {
+    fontSize: 16,
+    color: '#333'
+  }
+})
+```
+
+### Building the Pear-end
+
+Add the following code to `backend/backend.mjs`:
+
+```js
+// /* global Bare, BareKit */
+
+import RPC from 'bare-rpc'
+import fs from 'bare-fs'
+import URL from 'bare-url'
+import goodbye from 'graceful-goodbye'
+import { join } from 'bare-path'
+import { RPC_RESET, RPC_MESSAGE } from '../rpc-commands.mjs'
+
+import Autopass from 'autopass'
+import Corestore from 'corestore'
+const { IPC } = BareKit
+
+const path = join(URL.fileURLToPath(Bare.argv[0]), 'autopass-example')
+
+const rpc = new RPC(IPC, (req, error) => {
+  // Handle two way communication here
+})
+
+// For a clean start
+if (fs.existsSync(path)) {
+  fs.rmSync(path, {
+    recursive: true,
+    force: true
+  })
+}
+
+fs.mkdirSync(path)
+const invite = Bare.argv[1]
+const pair = Autopass.pair(new Corestore(path), invite)
+const pass = await pair.finished()
+goodbye(() => pass.close())
+
+await pass.ready()
+
+pass.on('update', async (e) => {
+  const req = rpc.request(RPC_RESET)
+  req.send('data')
+
+  for await (const data of pass.list()) {
+    const value = JSON.parse(data.value)
+
+    if (value[0] === 'password') {
+      const req = rpc.request(RPC_MESSAGE)
+      req.send(JSON.stringify(value))
+    }
+  }
+})
+```
+
+Finally define the RPC command enums in `rpc-commands.mjs`:
+
+```js
+export const RPC_RESET = 0
+export const RPC_MESSAGE = 1
+```
+
+## Bundling the Pear-end
+
+Now we need to create a bundle with all of our Pear-end code, dependencies and references to native addon libraries so that Bare has everything it needs to run our code.
+
+To create the bundle we will use `bare-pack`. Mobile apps link the native addons ahead of time, so we can target only the platform and use the `--linked` option to use those linked libraries. You can learn more about bundling with `bare-pack` [here](https://github.com/holepunchto/bare-pack).
+
+To create a bundle that targets both iOS and Android, run:
+
+```bash
+npx bare-pack --target ios --target android  --linked --out app/app.bundle.mjs backend/backend.mjs
+```
+
+This will create a bundle and store it under the `app` directory as `app.bundle.mjs` which is imported by the UI.
+
+## Running the application
+
+![Autopass mobile app running on iOS](../assets/autopass-mobile-running.png)
+
+### iOS
+
+```bash
+npm run ios
+```
+
+### Android
+
+```bash
+npm run android
+```
+
+## Viewing error logs
+
+Any React Native error will be directly printed to the terminal. Bare (Pear-end) errors will not appear directly in the terminal but they can be viewed using `logcat` when running the app on Android.
+
+To view logs while running on iOS on macOS use the built-in [Console.app](https://support.apple.com/en-in/guide/console/cnsl1012/mac) or the `log` tool using the predicate `subsystem == 'bare'`.
+
+```bash
+log stream --level=debug --predicate "subsystem == 'bare'"
+```
+
+For more information on consuming logs, see the [`liblog` README](https://github.com/holepunchto/liblog?tab=readme-ov-file#consuming-logs).
+
+## Explanation
+
+React Native uses Hermes as its Javascript engine by default. Hermes however does not support User Datagram Protocol (UDP) and the low level control needed for P2P applications. That's where Bare comes in. It provides simple ABI stable native bindings ([`libjs`](https://github.com/holepunchto/libjs)) that the Pear platform stack takes advantage of so you can write Javascript once and run it everywhere.
+
+### `app/index.tsx`
+
+```typescript
+import { Worklet } from 'react-native-bare-kit'
+```
+
+In order to create a Bare thread, we import the `Worklet` class from `react-native-bare-kit`. This class is what we use to create a Bare thread and is where the Pear-end (P2P) code is run.
+
+```typescript
+import bundle from './app.bundle'
+```
+
+`app.bundle` was created while [bundling the Pear-end](#Bundling-the-Pear-end). This bundle contains all of our dependencies and the code from `app/backend.mjs` in a single file. We import this bundle so we can pass it to the worklet as the source to run.
+
+```typescript
+import RPC from 'bare-rpc'
+```
+
+[`bare-rpc`](https://github.com/holepunchto/bare-rpc/) provides a remote procedure call (RPC) on top of `react-native-bare-kit`'s inter-process communication (IPC) stream to communicate between the React Native UI and the Pear-end.
+
+```typescript
+import b4a from 'b4a'
+```
+
+`b4a` is a module for creating buffers using `Uint8Array`s where `Buffer`s are not available. We use this to decode the request data sent via the `bare-rpc` from the Pear-end.
+
+```typescript
+const worklet = new Worklet()
+```
+
+Creates a new `worklet` object, ideally we should only create a single worklet.
+
+```typescript
+worklet.start('/app.bundle', bundle, [String(documentDirectory), pairingInvite])
+```
+
+Here we start our worklet with the bundle we imported in the previous step. The `'/app.bundle'` is the filename for the bundle, `bundle` is the bundled source that we imported and `[String(documentDirectory), pairingInvite]` are the arguments to be passed to the Bare runtime. These arguments will be available to the Bare process as soon as it starts in `Bare.argv[]`.
+
+```typescript
+const { IPC } = worklet
+```
+
+Once the worklet has started, we can use its IPC stream to communicate between the UI and Pear-end, but using an RPC on top of the IPC is often easier.
+
+```typescript
+new RPC(IPC, (req) => {
+  // Handle incoming RPC requests
+})
+```
+
+To that end, we create an RPC passing it the IPC stream and defining an `onrequest` callback for when a request is received from the other end.
+
+```typescript
+if (req.command === RPC_MESSAGE) {
+  const data = b4a.toString(req.data)
+  const parsedData = JSON.parse(data) // Assuming data is a JSON string
+  // Use the parsedData...
+}
+```
+
+Inside the callback, we respond to the request by first checking which command we received and then processing its data. If you need to reply to a command, you can also `req.reply(data)`.
+
+### `backend/backend.mjs`
+
+```js
+import RPC from 'bare-rpc'
+import fs from 'bare-fs'
+
+import Autopass from 'autopass'
+import Corestore from 'corestore'
+const { IPC } = BareKit
+```
+
+Here we import all necessary modules and define `IPC` getting it from `BareKit`. _BareKit and Bare are global in this file and available by default._
+
+```js
+Bare.argv[0]
+```
+
+As previously mentioned, arguments passed to the worklet are available in the `Bare.argv` property. So `Bare.argv[0]` contains the first argument passed to the Bare worklet.
+
+```js
+const pair = Autopass.pair(new Corestore(path), invite)
+```
+
+Start the pairing process with the other Autopass instance using the invite passed to the worklet. Checkout the `autopass` [README](https://github.com/holepunchto/autopass) to learn more.
+
+```js
+const req = rpc.request(RPC_RESET)
+req.send('data')
+```
+
+Create a new RPC request, and send it with `'data'`, this will be received by the UI in the RPC's `onrequest` callback.
+
+
+
+================================================
+FILE: guide/making-a-pear-desktop-app.md
+================================================
+# Making a Pear Desktop Application
+
+This guide demonstrates how to build a peer-to-peer chat application.
+
+It continues where [Starting a Pear Desktop Project](./starting-a-pear-desktop-project.md) left off.
+
+{% embed url="https://www.youtube.com/watch?v=y2G97xz78gU" %} Build with Pear - Episode 01: Developing with Pear {% embeded %}
+
+## Step 1. HTML Structure and CSS Styles
+
+The project folder should contain:
+
+- `package.json`
+- `index.js`
+- `ui/index.html`
+- `ui/app.js`
+- `test/index.test.js`
+
+Start by defining the app's layout in `index.html`:
+
+``` html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      pear-ctrl[data-platform="darwin"] { margin-top: 12px; margin-left: 10px; }
+
+      #titlebar {
+        -webkit-app-region: drag;
+        height: 30px;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #B0D94413;
+        filter: drop-shadow(2px 10px 6px #888);
+      }
+
+      button, input {
+        all: unset;
+        border: 1px ridge #B0D944;
+        background: #000;
+        color: #B0D944;
+        padding: .45rem;
+        font-family: monospace;
+        font-size: 1rem;
+        line-height: 1rem;
+      }
+
+      body {
+        background-color: #001601;
+        font-family: monospace;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        display: flex;
+        height: 100vh;
+        color: white;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      #or {
+        margin: 1.5rem auto;
+      }
+
+      #setup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #loading {
+        align-self: center;
+      }
+
+      #chat {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        padding: .75rem;
+      }
+
+      #header {
+        margin-top: 2.2rem;
+        margin-bottom: 0.75rem;
+      }
+
+      #details {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #messages {
+        flex: 1;
+        font-family: 'Courier New', Courier, monospace;
+        overflow-y: scroll;
+      }
+
+      #message-form {
+        display: flex;
+      }
+
+      #message {
+        flex: 1;
+      }
+    </style>
+    <script type='module' src='./app.js'></script>
+  </head>
+  <body>
+    <div id="titlebar">
+      <pear-ctrl></pear-ctrl>
+    </div>
+    <main>
+      <div id="setup">
+        <div>
+          <button id="create-chat-room">Create</button>
+        </div>
+        <div id="or">
+          - or -
+        </div>
+        <form id="join-form">
+          <button type="submit" id="join-chat-room">Join</button>
+          <input required id="join-chat-room-topic" type="text" placeholder="Chat room Topic" />
+        </form>
+      </div>
+      <div id="loading" class="hidden">Loading ...</div>
+      <div id="chat" class="hidden">
+        <div id="header">
+          <div id="details">
+            <div>
+              Topic: <span id="chat-room-topic"></span>
+            </div>
+            <div>
+              Peers: <span id="peers-count">0</span>
+            </div>
+          </div>
+        </div>
+        <div id="messages"></div>
+        <form id="message-form">
+          <input id="message" type="text" />
+          <input type="submit" value="Send" />
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
+```
+
+**Note**: To make the `<pear-ctrl>` element draggable in Pear applications, wrap it in another element that uses the following CSS property: 
+```css
+-webkit-app-region : drag;
+``` 
+This non-standard CSS property tells the application that this element should act as a draggable region for the entire window.
+
+Running `pear run --dev .` should show
+
+![Layout of the app](../assets/chat-app-3.png)
+
+
+## Step 2. Module dependencies
+
+**Note**: Close the app before installing dependencies. If dependencies are installed while the app is running, an error is thrown.
+
+Install the development dependencies using:
+```
+npm install
+```
+This will install the following: 
+- [pear-interface](https://github.com/holepunchto/pear-interface) for documentation and auto-completion inside editor.
+- [brittle](https://github.com/holepunchto/brittle) a TAP framework for testing.
+
+The app uses these modules:
+
+- [hyperswarm](https://www.npmjs.com/package/hyperswarm) to connect peers on a "topic".
+- [hypercore-crypto](https://www.npmjs.com/package/hypercore-crypto) for basic cryptography.
+- [b4a](https://www.npmjs.com/package/b4a) to manipulate buffers.
+
+Install the dependencies with:
+
+```
+npm install hyperswarm hypercore-crypto b4a
+```
+
+
+## Step 3. JavaScript
+
+Replace `app.js` with
+
+``` js
+
+// For interactive documentation and code auto-completion in editor
+/** @typedef {import('pear-interface')} */ 
+
+/* global Pear */
+import Hyperswarm from 'hyperswarm'   // Module for P2P networking and connecting peers
+import crypto from 'hypercore-crypto' // Cryptographic functions for generating the key in app
+import b4a from 'b4a'                 // Module for buffer-to-string and vice-versa conversions 
+const { teardown, updates } = Pear    // Functions for cleanup and updates
+
+const swarm = new Hyperswarm()
+
+// Unannounce the public key before exiting the process
+// (This is not a requirement, but it helps avoid DHT pollution)
+teardown(() => swarm.destroy())
+
+// Enable automatic reloading for the app
+// This is optional but helpful during production
+updates(() => Pear.reload())
+
+// When there's a new connection, listen for new messages, and add them to the UI
+swarm.on('connection', (peer) => {
+  // name incoming peers after first 6 chars of its public key as hex
+  const name = b4a.toString(peer.remotePublicKey, 'hex').substr(0, 6)
+  peer.on('data', message => onMessageAdded(name, message))
+  peer.on('error', e => console.log(`Connection error: ${e}`))
+})
+
+// When there's updates to the swarm, update the peers count
+swarm.on('update', () => {
+  document.querySelector('#peers-count').textContent = swarm.connections.size
+})
+
+document.querySelector('#create-chat-room').addEventListener('click', createChatRoom)
+document.querySelector('#join-form').addEventListener('submit', joinChatRoom)
+document.querySelector('#message-form').addEventListener('submit', sendMessage)
+
+async function createChatRoom() {
+  // Generate a new random topic (32 byte string)
+  const topicBuffer = crypto.randomBytes(32)
+  joinSwarm(topicBuffer)
+}
+
+async function joinChatRoom (e) {
+  e.preventDefault()
+  const topicStr = document.querySelector('#join-chat-room-topic').value
+  const topicBuffer = b4a.from(topicStr, 'hex')
+  joinSwarm(topicBuffer)
+}
+
+async function joinSwarm (topicBuffer) {
+  document.querySelector('#setup').classList.add('hidden')
+  document.querySelector('#loading').classList.remove('hidden')
+
+  // Join the swarm with the topic. Setting both client/server to true means that this app can act as both.
+  const discovery = swarm.join(topicBuffer, { client: true, server: true })
+  await discovery.flushed()
+
+  const topic = b4a.toString(topicBuffer, 'hex')
+  document.querySelector('#chat-room-topic').innerText = topic
+  document.querySelector('#loading').classList.add('hidden')
+  document.querySelector('#chat').classList.remove('hidden')
+}
+
+function sendMessage (e) {
+  const message = document.querySelector('#message').value
+  document.querySelector('#message').value = ''
+  e.preventDefault()
+
+  onMessageAdded('You', message)
+
+  // Send the message to all peers (that you are connected to)
+  const peers = [...swarm.connections]
+  for (const peer of peers) peer.write(message)
+}
+
+// appends element to #messages element with content set to sender and message
+function onMessageAdded (from, message) {
+  const $div = document.createElement('div')
+  $div.textContent = `<${from}> ${message}`
+  document.querySelector('#messages').appendChild($div)
+}
+```
+
+> Note that the `pear` dependency is used, even though it was not installed. This is the [Pear API](../reference/api.md#globalpear), available to any Pear project.
+
+
+## Step 4. Chat
+
+Open two app instances by running `pear run --dev .` in two terminals. 
+
+In the first app, click on `Create`. A random topic will appear at the top.
+
+Note that topics consist of 64 hexadecimal characters (32 bytes).
+
+<p align="center">
+  <img src="../assets/chat-app-4a.png" alt="The first app, with the topic">
+</p>
+
+Paste the topic into the second app, then click on `Join`.
+
+<p align="center">
+  <img src="../assets/chat-app-4b.png" alt="Second app, using topic from the first">
+</p>
+
+Once connected, messages can be sent between each chat application.
+
+<p align="center">
+  <img src="../assets/chat-app-5a.png" alt="View from the first app"> <img src="../assets/chat-app-5b.png" alt="View from the second app">
+</p>
+
+### Discussion
+
+#### Chatting With Another Machine
+
+The two application instances used Hyperswarm's distributed hash table (DHT) to connect with each other.
+
+The DHT enables connections across different machines, so chatting with other people is also possible, as long as they run the same application.
+
+One option is to copy the code, but it is also possible to distribute the application itself over the DHT. This is the topic of [Sharing a Pear Application](./sharing-a-pear-app.md).
+
+#### Joining Topics VS Joining Servers
+
+In a traditional client-server setup, the server is hosted at an IP address (or hostname) and a port, e.g. `http://localhost:3000`. This is what clients use to connect to the server.
+
+The code in `app.js` contains the line `swarm.join(topicBuffer, { client: true, server: true })`.
+
+`topicBuffer` is the invitation: anyone who knows this topic can join the room and message the other members.
+
+Note that all members are equal: there is no separate client or server. If the room creator goes offline, or even deletes the room from their machine, the other members can continue chatting.
+
+#### Frontend Frameworks
+
+Any frontend framework can be used with Pear.
+
+## Next
+
+* [Starting a Pear Terminal Project](./starting-a-pear-terminal-project.md)
+* [Sharing a Pear Application](./sharing-a-pear-app.md)
+
+
+
+================================================
+FILE: guide/making-a-pear-terminal-app.md
+================================================
+# Making a Pear Terminal Application
+
+This guide demonstrates how to build a peer-to-peer chat application.
+
+It continues where [Starting a Pear Terminal Project](./starting-a-pear-terminal-project.md) left off.
+
+{% embed url="https://www.youtube.com/watch?v=UoGJ7PtAwtI" %} Build with Pear - Episode 04: Pear Terminal Applications {% embeded %}
+
+## Step 1. Install modules
+
+Install the development dependencies using:
+```
+npm install
+```
+This will install the following: 
+- [pear-interface](https://github.com/holepunchto/pear-interface) for documentation and auto-completion inside editors.
+- [brittle](https://github.com/holepunchto/brittle) a TAP framework for testing.
+
+For the chat part of the app, the same modules are needed as in [Making a Pear Desktop Application](./making-a-pear-desktop-app.md), `hyperswarm`, `b4a` and  `hypercore-crypto`.
+
+Pear runs on [`Bare`](https://github.com/holepunchto/bare), a lightweight JavaScript runtime which is similar to Node.js but comes with very few internal modules. Almost all Bare functionality comes from dependencies. Pear Terminal Applications are Bare applications so we will need `bare-readline` and `bare-tty` to read user input.
+
+
+```
+npm i bare-readline bare-tty bare-process hyperswarm b4a hypercore-crypto
+```
+
+## Step 2. JavaScript
+
+Replace `index.js` with
+
+``` js
+
+// For interactive documentation and code auto-completion in editor
+/** @typedef {import('pear-interface')} */ 
+
+/* global Pear */
+import Hyperswarm from 'hyperswarm'   // Module for P2P networking and connecting peers
+import b4a from 'b4a'                 // Module for buffer-to-string and vice-versa conversions 
+import crypto from 'hypercore-crypto' // Cryptographic functions for generating the key in app
+import readline from 'bare-readline'  // Module for reading user input in terminal
+import tty from 'bare-tty'            // Module to control terminal behavior
+import process from 'bare-process'    // Process control for Bare
+
+
+const { teardown, config, updates } = Pear    // Import configuration options, updates and cleanup functions from Pear
+const key = config.args.pop()       // Retrieve a potential chat room key from command-line arguments
+const shouldCreateSwarm = !key      // Flag to determine if a new chat room should be created
+const swarm = new Hyperswarm()
+
+// Unannounce the public key before exiting the process
+// (This is not a requirement, but it helps avoid DHT pollution)
+teardown(() => swarm.destroy())
+
+// Enable automatic reloading for the app
+// This is optional but helpful during production
+updates(() => Pear.reload())
+
+const rl = readline.createInterface({
+  input: new tty.ReadStream(0),
+  output: new tty.WriteStream(1)
+})
+
+// When there's a new connection, listen for new messages, and output them to the terminal
+swarm.on('connection', peer => {
+  const name = b4a.toString(peer.remotePublicKey, 'hex').substr(0, 6)
+  console.log(`[info] New peer joined, ${name}`)
+  peer.on('data', message => appendMessage({ name, message }))
+  peer.on('error', e => console.log(`Connection error: ${e}`))
+})
+
+// When there's updates to the swarm, update the peers count
+swarm.on('update', () => {
+  console.log(`[info] Number of connections is now ${swarm.connections.size}`)
+})
+
+if (shouldCreateSwarm) {
+  await createChatRoom()
+} else {
+  await joinChatRoom(key)
+}
+
+rl.input.setMode(tty.constants.MODE_RAW) // Enable raw input mode for efficient key reading
+rl.on('data', line => {
+  sendMessage(line)
+  rl.prompt()
+})
+rl.prompt()
+
+rl.on('close', () => {
+  process.kill(process.pid, 'SIGINT')
+})
+
+async function createChatRoom () {
+  // Generate a new random topic (32 byte string)
+  const topicBuffer = crypto.randomBytes(32)
+  // Create a new chat room for the topic
+  await joinSwarm(topicBuffer)
+  const topic = b4a.toString(topicBuffer, 'hex')
+  console.log(`[info] Created new chat room: ${topic}`)
+}
+
+async function joinChatRoom (topicStr) {
+  const topicBuffer = b4a.from(topicStr, 'hex')
+  await joinSwarm(topicBuffer)
+  console.log(`[info] Joined chat room`)
+}
+
+async function joinSwarm (topicBuffer) {
+  // Join the swarm with the topic. Setting both client/server to true means that this app can act as both.
+  const discovery = swarm.join(topicBuffer, { client: true, server: true })
+  await discovery.flushed()
+}
+
+function sendMessage (message) {
+  // Send the message to all peers (that you are connected to)
+  const peers = [...swarm.connections]
+  for (const peer of peers) peer.write(message)
+}
+
+function appendMessage ({ name, message }) {
+  // Output chat msgs to terminal
+  console.log(`[${name}] ${message}`)
+}
+```
+
+## Step 3. Run in dev mode
+
+To test this chat app, in one terminal run `pear run --dev .`
+
+The app will output something similar to:
+
+```
+[info] Created new chat room: a1b2c35fbeb452bc900c5a1c00306e52319a3159317312f54fe5a246d634f51a
+```
+
+In another terminal use this key as input, `pear run --dev . a1b2c35fbeb452bc900c5a1c00306e52319a3159317312f54fe5a246d634f51a`
+
+The app will output:
+
+```
+[info] Number of connections is now 0
+[info] New peer joined, 6193ec
+[info] Number of connections is now 1
+[info] Joined chat room
+```
+
+Type something in one of the applications. Two Terminal Applications are now connected peer-to-peer.
+
+## Next
+
+* [Sharing a Pear Application](./sharing-a-pear-app.md)
+
+
+================================================
+FILE: guide/releasing-a-pear-app.md
+================================================
+# Releasing a Pear Application
+
+Pear applications are stored in an append-only log ([hypercore](https://github.com/holepunchto/hypercore)).
+
+Each version is identified by `<fork>.<length>.<key>`. The length corresponds to the length of the application's append-only log at the time.
+
+{% embed url="https://www.youtube.com/watch?v=OTwY_avUPyI" %} Build with Pear - Episode 03: Releasing Pear Applications {% embeded %}
+
+`pear run <link>` opens the application.
+
+Before a release has been marked, the latest version is used. This is useful during development, to test the app locally and to share a preview with other peers.
+
+Once a release has been marked, `pear run <link>` opens the latest marked release.
+
+## Step 1: Staging Production
+
+`pear stage <channel name>` derives an application key from the channel name and the application name (as defined in the project's `package.json`).
+
+For example, a `pear stage dev` release channel used during development can be complemented with a `production` channel:
+
+```sh
+pear stage production
+```
+
+Running this command in a Pear project folder outputs an application link.
+
+Using separate channels for development and production means there is an application link for trusted peers and one for public peers.
+
+The development link can remain unreleased, so that `pear run <dev link>` loads the latest staged changes by default.
+
+The production link's releases can be marked, so that `pear run <production link>` loads the latest stable release by default.
+
+## Step 2: Marking a Release
+
+Create a new release point with the latest staged changes on the production channel by running.
+
+```
+pear release production
+```
+
+
+Run `pear help release` for more info on the command.
+
+
+Keep in mind that changes to an application can only propagate to peers when the application is being seeded:
+
+```
+pear seed production
+```
+
+## Step 3: Running staged from a released app
+
+After marking a release, make a trivial change to the project (e.g. add a `console.log(...)` somewhere).
+
+First verify that it works by running `pear run --dev .`
+
+Now stage the change with `pear stage production`.
+
+Opening the application with `pear run <link>` will **not** output the log, because it loads the latest **marked** release.
+
+The latest staged changes of a released application can be previewed with the `--checkout` flag:
+
+```
+pear run --checkout=staged <link>
+```
+
+The value of the `--checkout` flag may be `staged`, `released` (the default) or a number referring to a specific version length.
+
+## Discussion
+
+### The dump-stage-release strategy
+
+A development application link can be shared among trusted peers. At that point, it could be referred to as an internal application link (internal to the group of peers who have the link).
+
+While using different channel names is sensible, using `pear stage dev` and `pear stage production` on the same machine has practical implications.
+
+A dump-stage-release strategy separates the concerns between development and production, by using a different machine for each.
+
+On the machine that holds the production link, run:
+
+```
+pear dump <internal-link> <path-to-app-production-dir>
+```
+
+This is a reverse stage: it synchronizes the application files to disk.
+
+Once complete, the project can be staged from the production machine with:
+
+```
+pear stage production
+```
+
+Then released with:
+
+```
+pear release production
+```
+
+To allow other peers access to the new release, run `pear seed production`.
+
+### Distribution Packages
+
+Asset building of distribution packages (.dmg, .msi, .appimage) is not yet possible with Pear, but will be supported in the future.
+
+## Next
+
+* [Starting a Pear Desktop Project](./starting-a-pear-desktop-project.md)
+* [Making a Pear Desktop Application](./making-a-pear-desktop-app.md)
+* [Starting a Pear Terminal Project](./starting-a-pear-terminal-project.md)
+* [Making a Pear Terminal Application](./making-a-pear-terminal-app.md)
+* [Sharing a Pear Application](./sharing-a-pear-app.md)
+
+
+
+================================================
+FILE: guide/sharing-a-pear-app.md
+================================================
+# Sharing a Pear Application
+
+Applications can be shared with peers by seeding them to the network from an efficient local data structure (a [hypercore](https://github.com/holepunchto/hypercore)). We call the mirroring of a local file system into the Pear platform Application Storage "staging". Seeding is sharing an app from a machine over the Distributed Hash Table (DHT) (via [hyperswarm](https://github.com/holepunchto/hyperswarm)) so that other peers can replicate, consume and reseed the application.
+
+{% embed url="https://www.youtube.com/watch?v=BEadqmp7lA0" %} Build with Pear - Episode 02: Sharing Pear Applications {% embeded %}
+
+This guide can either follow on from, [Making a Pear Desktop Application](./making-a-pear-desktop-app.md), [Making a Pear Terminal Application](./making-a-pear-terminal-app.md), or get setup quickly with the following:
+
+```bash
+mkdir staging-example
+cd staging-example
+pear init -y
+```
+
+If starting from [Making a Pear Desktop Application](./making-a-pear-desktop-app.md) or [Making a Pear Terminal Application](./making-a-pear-terminal-app.md) ensure that the command-line current working directory is set to the project folder of the application.
+
+## Step 1. Stage the app
+
+To view the help for the `pear stage` command run `pear help stage`.
+
+The command signature for `pear stage` is `pear stage <channel|link> [dir]`.
+
+Before a project is staged for the first time there is no key. The application name and `channel` name are involved in generating the application key, which is later used to run the application from the DHT.
+
+By convention, for internal use we use the channel name `dev`:
+
+```
+pear stage dev
+```
+
+No need to specify `dir`, the command-line current working directory is already set to the project folder.
+
+The channel name can be any valid name. Using `dev` for local development checks and internal collaboration, using `pear stage production` for production and `pear stage <custom-channel-name>` for any customizations/specializations of the application is a reasonable convention.
+
+Stage will output a diff of changes - the first time will all be additions of course - and then it will output the application link.
+
+There will be a warmup step where the application is analyzed for initialization-to-loaded critical-path. This metadata is stored along with the application into an application-dedicated hypercore inside Pear. This helps the application load faster. All state is local and by default only the original machine that stages an application can write to this application-dedicated hypercore.
+
+> Some frontend frameworks will load different assets based on whether the `NODE_ENV` environment variable is set to `production`. If the application has this need, use `NODE_ENV=production pear stage dev` in order to stage the production library code so that when Stage Warmup occurs the captured critical-path consists of production assets.
+
+## Step 2. Run the app on the same machine
+
+To view the help for the `pear run` command run `pear help run`.
+
+The command signature for `pear run` is `pear run <link>`.
+
+Copy the application link that was output when the application was staged in the prior step and pass it to `pear run`. For example, if the application link was `pear://nykmkrpwgadcd8m9x5khhh43j9izj123eguzqg3ygta7yn1s379o` the command to run would be:
+
+```
+pear run pear://nykmkrpwgadcd8m9x5khhh43j9izj123eguzqg3ygta7yn1s379o
+```
+
+`pear run`  opens the application from Pear's application storage. So far the application has remained local, in order to share it with other peers it must be seeded.
+
+## Step 3. Seed the app
+
+The application can be shared with other peers by announcing the application to the DHT and then supplying the application link to other peers.
+
+To view the help for the `pear seed` command run `pear help seed`.
+
+The command signature for `pear seed` is `pear seed <channel|link> [dir]`.
+
+The staged application can be seeded with:
+
+```
+pear seed dev
+```
+
+The application name and `channel` name are involved in generating the application key so `pear seed` uses the project folder to determine the application name from the `package.json` (`pear.name` or else `name` field). There is no need to specify `dir` here as the command-line current working directory is already set to the project folder.
+
+This will output something similar to the following
+
+```
+🍐 Seeding: chat [ dev ]
+   ctrl^c to stop & exit
+
+-o-:-
+    pear://nykmkrpwgadcd8m9x5khhh43j9izj123eguzqg3ygta7yn1s379o
+...
+^_^ announced
+```
+
+As long as the process is running the application is being seeded. If other peers reseed the application the original process could be closed. Be sure to keep the terminal open while this process is running.
+
+
+## Step 4. Run the app on another machine
+
+It's important that the application seeding process from the former step is up and running otherwise peers will not be able to connect and replicate state.
+
+With another machine or friend that has `pear` installed execute the `pear run <link>` command to load the application directly peer-to-peer. So with the same example application link it would be:
+
+```
+pear run pear://nykmkrpwgadcd8m9x5khhh43j9izj123eguzqg3ygta7yn1s379o
+```
+
+When `pear run` is executed on the peer machine there will be a security prompt to add the key to a list of trusted applications by typing 'TRUST'.
+
+When running a terminal application using an untrusted key for the first time the prompt would be:
+
+```
+pear run pear://nykmkrpwgadcd8m9x5khhh43j9izj123eguzqg3ygta7yn1s379o
+✖ Key pear://nykmkrpwgadcd8m9x5khhh43j9izj123eguzqg3ygta7yn1s379o is not known
+
+Be sure that software is trusted before running it
+
+Type "TRUST" to allow execution or anything else to exit
+
+Trust application? 
+```
+The trust dialog is a security mechanism in Pear that appears when the user tries to run an application from an unknown or untrusted key for the first time. In case that the app is run in detached mode, for example, when clicking on a pear link in the browser, the trust dialog is a GUI (Graphical User Interface). 
+
+![Trust dialog](../assets/trust-dialog.png)
+
+> During development with `pear run --dev`, applications are automatically trusted, as they are assumed to be safe for testing purposes. Trust dialog can be suppressed using the  `--no-ask` flag with `pear run` in which case the application will automatically decline unknown keys.
+
+The application has no state when it's opened for the first time, so the application may show a loader until it's ready to reveal.
+
+The application staging machine that is running the seeding process should show output similar to:
+
+```
+🍐 Seeding: chat [ dev ]
+   ctrl^c to stop & exit
+
+-o-:-
+    pear://nykmkrpwgadcd8m9x5khhh43j9izj123eguzqg3ygta7yn1s379o
+...
+^_^ announced
+•-• peer join 8054f613d911b990834a0234507447c8ca88f4e778594c0e4fc480a314dc6d62
+```
+
+The `peer join` line displays the remote public key, in hex, of the peer that executed `pear run` with the application link. 
+
+Once the application is closed on the peer machine the seeding output on the original machine will be similar to:
+
+```
+🍐 Seeding: staging-example [ dev ]
+   ctrl^c to stop & exit
+
+-o-:-
+    pear//:nykmkrpwgadcd8m9x5khhh43j9izj123eguzqg3ygta7yn1s379o
+...
+^_^ announced
+•-• peer join 8054f613d911b990834a0234507447c8ca88f4e778594c0e4fc480a314dc6d62
+-_- peer drop 8054f613d911b990834a0234507447c8ca88f4e778594c0e4fc480a314dc6d62
+```
+
+### Discussion
+
+#### Lazy loading large files & sparse replication
+
+When Pear loads an application from a peer the staged files are sparsely replicated. Assets not in the critical loading path are only downloaded from peers on-demand. If the application doesn't request an asset or module during a user-session on a given machine it does not get replicated to that machine. Pear's Application Storage can contain very large files (terabytes) that can be accessed by peers on demand. It also makes sense to structure applications so that very large files are not in the critical loading path. So that means strategies such as lazy loading large payloads, avoiding autoplaying large media files and deferring non-essential scripts and styles is as effective with Pear (if not moreso) than with Internet Browsers.
+
+#### Reseeding
+
+The command signature for `pear seed` is `pear seed <channel|link> [dir]`.
+
+If the application was staged on the machine, it will seed the application from the machine.
+
+Otherwise, passing an application link to `pear seed`  will reseed the application from that link.
+
+For example, given the link `pear://nykmkrpwgadcd8m9x5khhh43j9izj123eguzqg3ygta7yn1s379o`, executing `pear seed pear://nykmkrpwgadcd8m9x5khhh43j9izj123eguzqg3ygta7yn1s379o` on a peer that didn't originally stage that particular application will result in that process syncing up-to-date data from peers and providing it to peers who need it.
+
+Once an application is being reseeded, the original seeding process can be closed on the staging machine. However any newly staged changes have to be seeded from that machine for reseeders to pick them up. Which means `pear seed` can be used "deploy" to reseeders by starting after staging, leaving it running until reseeders have synced and then stopping the process again.
+
+## Next
+
+* [Releasing a Pear Application](./releasing-a-pear-app.md)
+
+
+
+================================================
+FILE: guide/starting-a-pear-desktop-project.md
+================================================
+# Starting a Pear Desktop Project
+
+This section shows how to generate, configure, and develop a Pear desktop project, in preparation for [Making a Pear Desktop Application](./making-a-pear-desktop-app.md).
+
+{% embed url="https://www.youtube.com/watch?v=y2G97xz78gU" %} Build with Pear - Episode 01: Developing with Pear {% embeded %}
+
+## Step 1. Initialization
+
+Use `pear init` to create a new Pear project.
+
+```
+mkdir chat
+cd chat
+pear init ui --yes
+```
+
+This creates the base project structure.
+
+- `package.json`. App configuration. Notice the `pear` property.
+- `index.js`. App entrypoint.
+- `ui/index.html`. GUI entrypoint.
+- `ui/app.js`. Main code.
+- `test/index.test.js`. Test skeleton.
+
+## Step 2. Verify Everything Works
+
+Use `pear run` to verify everything works as expected.
+
+```
+pear run --dev .
+```
+
+> A directory or link needs to be specified with `pear run`, here `.` denotes the current Project directory.
+
+The app should open in development mode. In this mode developer tools are also opened.
+
+![Running pear run --dev .](../assets/chat-app-1.png)
+
+## Step 3. Automatic Reload
+
+To enable automatic reloading, add the following lines to `app.js` :
+
+```js
+Pear.updates(() => Pear.reload())
+```
+
+Run the app again using:
+
+```js
+pear run --dev .
+```
+
+Now Pear watches project files. When they change, the app is automatically reloaded.
+
+While keeping the `pear run --dev .` command running, open `index.html` in an editor.
+
+Change `<h1>desktop</h1>` to `<h1>Hello world</h1>`.
+
+The app should now show:
+
+![Automatic reload](../assets/chat-app-2.png)
+
+> Live reload with hot-module reloading is possible by using the `pear.watch` configuration and the [`pear.updates`](https://github.com/holepunchto/pear-updates) API. The [pear-hotmods](https://github.com/holepunchto/pear-hotmods) convenience module can also be used.
+
+## Step 4. Configuration
+
+Application configuration is under the `pear` property in `package.json`
+
+Open `package.json` and update it to:
+
+```
+{
+  ...
+  "pear": {
+    "gui": {
+      "height": 400,
+      "width": 700
+    }
+  }
+  ...
+}
+```
+
+Close the app and re-run `pear run --dev .` to see the changes, the initial window size is different now.
+
+See the [Configuration Documentation](../reference/configuration.md) for all options.
+
+
+## Next
+
+* [Making a Pear Desktop Application](./making-a-pear-desktop-app.md)
+
+
+
+================================================
+FILE: guide/starting-a-pear-terminal-project.md
+================================================
+# Starting a Pear Terminal Project
+
+{% embed url="https://www.youtube.com/watch?v=UoGJ7PtAwtI" %} Build with Pear - Episode 04: Pear Terminal Applications {% embeded %}
+
+## Step 1. Init
+
+First create a new project using `pear init --type terminal`.
+
+```
+mkdir chat-app
+cd chat-app
+pear init --yes --type terminal
+```
+
+This creates the base project structure.
+
+- `package.json`. App configuration. Notice the `pear` property.
+- `index.js`. App entrypoint.
+- `test/index.test.js`. Test skeleton.
+
+## Step 2. Verify Everything Works
+
+Use `pear run` to see that it works.
+
+```
+pear run --dev .
+```
+
+> A directory or link needs to be specified with `pear run`, here `.` denotes the current Project directory.
+
+The app will now run. That's all there is to getting a Pear Terminal project started.
+
+
+## Next
+
+* [Making a Pear Terminal Application](./making-a-pear-terminal-app.md)
+
+
+
+================================================
+FILE: helpers/compact-encoding.md
+================================================
+[https://github.com/holepunchto/compact-encoding](https://github.com/holepunchto/compact-encoding)
+
+
+
+================================================
+FILE: helpers/corestore.md
+================================================
+[https://github.com/holepunchto/corestore](https://github.com/holepunchto/corestore)
+
+
+
+================================================
+FILE: helpers/localdrive.md
+================================================
+[https://github.com/holepunchto/localdrive](https://github.com/holepunchto/localdrive)
+
+
+
+================================================
+FILE: helpers/mirrordrive.md
+================================================
+[https://github.com/holepunchto/mirror-drive](https://github.com/holepunchto/mirror-drive)
+
+
+
+================================================
+FILE: helpers/protomux.md
+================================================
+[https://github.com/holepunchto/protomux](https://github.com/holepunchto/protomux)
+
+
+
+================================================
+FILE: helpers/secretstream.md
+================================================
+[https://github.com/holepunchto/hyperswarm-secret-stream](https://github.com/holepunchto/hyperswarm-secret-stream)
+
+
+
+================================================
+FILE: howto/connect-to-many-peers-by-topic-with-hyperswarm.md
+================================================
+# How to connect to many peers by topic with Hyperswarm
+
+In the former example, two peers connected directly using the first peer's public key. Hyperswarm helps to discover peers swarming a common topic, and connect to as many of them as possible. This will become clearer in the Hypercore example, but it's the best way to distribute peer-to-peer data structures.
+
+The [Hyperswarm](https://github.com/holepunchto/hyperswarm) module provides a higher-level interface over the underlying DHT, abstracting away the mechanics of establishing and maintaining connections. Instead, 'join' topics, and the swarm discovers peers automatically. It also handles reconnections in the event of failures.
+
+In the [How to connect two Peers by key with Hyperdht](./connect-two-peers-by-key-with-hyperdht.md), we needed to explicitly indicate which peer was the server and which was the client. By using Hyperswarm, we create two peers, have them join a common topic, and let the swarm deal with connections.
+
+This How-to consists of a single application, `peer-app`. 
+
+Create the `peer-app` project with the following commands:
+
+```
+mkdir peer-app
+cd peer-app
+pear init -y -t terminal
+npm install hyperswarm hypercore-crypto b4a bare-process
+```
+
+Alter the peer-app/index.js file to the following:
+
+```javascript
+import Hyperswarm from 'hyperswarm'
+import crypto from 'hypercore-crypto'
+import b4a from 'b4a'
+import process from 'bare-process'
+
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+// Keep track of all connections and console.log incoming data
+const conns = []
+swarm.on('connection', conn => {
+  const name = b4a.toString(conn.remotePublicKey, 'hex')
+  console.log('* got a connection from:', name, '*')
+  conns.push(conn)
+  conn.once('close', () => conns.splice(conns.indexOf(conn), 1))
+  conn.on('data', data => console.log(`${name}: ${data}`))
+  conn.on('error', e => console.log(`Connection error: ${e}`))
+})
+
+// Broadcast stdin to all connections
+process.stdin.on('data', d => {
+  for (const conn of conns) {
+    conn.write(d)
+  }
+})
+
+// Join a common topic
+const topic = Pear.config.args[0] ? b4a.from(Pear.config.args[0], 'hex') : crypto.randomBytes(32)
+const discovery = swarm.join(topic, { client: true, server: true })
+
+// The flushed promise will resolve when the topic has been fully announced to the DHT
+discovery.flushed().then(() => {
+  console.log('joined topic:', b4a.toString(topic, 'hex'))
+})
+```
+
+In one terminal, open `peer-app` with `pear run --dev .`
+
+```
+cd peer-app
+pear run --dev .
+```
+
+This will display the topic. Copy/paste that topic into as many additional terminals as desired with `pear run --dev . <SUPPLY TOPIC HERE>` (assuming that the current working directory of each terminal is the `peer-app` folder). Each peer will log information about the other connected peers.
+
+Start typing into any terminal, and it will be broadcast to all connected peers.
+
+> It is best practice to only have one Hyperswarm instance per application. This will speed up connections by reducing number of entries per topic and connections.
+
+
+
+================================================
+FILE: howto/connect-two-peers-by-key-with-hyperdht.md
+================================================
+
+# How to connect two Peers by key with Hyperdht
+
+[`HyperDHT`](https://github.com/holepunchto/hyperdht) helps clients connect to a server peer with a known public key. HyperDHT uses a series of holepunching techniques to establish direct connections between the peers, even if they're located on home networks with tricky NATs.
+
+In the HyperDHT, peers are identified by a public key, not by an IP address. The public key is looked up in a decentralized hash table, which maps the key to an IP address and port. This means users can connect to each other irrespective of their location, even if they move between different networks.
+
+> HyperDHT's holepunching will fail if both the client peer and the server peer are on randomizing [NATs](https://en.wikipedia.org/wiki/Network_address_translation), in which case the connection must be relayed through a third peer. HyperDHT does not do any relaying by default.
+
+> For example, Keet implements its relaying system wherein other call participants can serve as relays -- the more participants in the call, the stronger overall connectivity becomes.
+
+Use the HyperDHT to create a basic CLI chat app where a client peer connects to a server peer by public key. 
+
+This example consists of two applications: `client-app` and `server-app`.
+
+The `server-app` will create a key pair and then start a server that will listen on the generated key pair. The public key is logged into the console. Copy it for instantiating the client.
+
+Create the `server-app` project with the following commands:
+
+```
+mkdir server-app
+cd server-app
+pear init -y -t terminal
+npm install hyperdht b4a bare-process
+```
+
+Alter `server-app/index.js` to the following:
+
+```javascript
+import DHT from 'hyperdht'
+import b4a from 'b4a'
+import process from 'bare-process'
+
+const dht = new DHT()
+
+// This keypair is the peer identifier in the DHT
+const keyPair = DHT.keyPair()
+
+const server = dht.createServer(conn => {
+  console.log('got connection!')
+  process.stdin.pipe(conn).pipe(process.stdout)
+})
+
+server.listen(keyPair).then(() => {
+  console.log('listening on:', b4a.toString(keyPair.publicKey, 'hex'))
+})
+
+// Unnannounce the public key before exiting the process
+// (This is not a requirement, but it helps avoid DHT pollution)
+Pear.teardown(() => server.close())
+```
+
+Open the `server-app` with `pear run --dev .`.
+
+In another terminal create the `client-app` project with the following commands:
+
+```
+mkdir client-app
+cd client-app
+pear init -y -t terminal
+npm install hyperdht b4a bare-process
+```
+Alter `client-app/index.js` to the following:
+
+``` javascript
+import DHT from 'hyperdht'
+import b4a from 'b4a'
+import process from 'bare-process'
+
+const key = Pear.config.args[0]
+if (!key) throw new Error('provide a key')
+
+console.log('Connecting to:', key)
+const publicKey = b4a.from(key, 'hex')
+
+const dht = new DHT()
+const conn = dht.connect(publicKey)
+conn.once('open', () => console.log('got connection!'))
+
+process.stdin.pipe(conn).pipe(process.stdout)
+```
+
+Run the client passing it the key from the server:
+
+```
+pear run --dev . <SUPPLY KEY HERE>
+```
+
+The `client-app` will spin up a client, and the public key copied earlier must be supplied as a command line argument for connecting to the server. The client process will log `got connection` into the console when it connects to the server.
+
+Once it's connected, try typing in both terminals.
+
+
+
+================================================
+FILE: howto/create-a-full-peer-to-peer-filesystem-with-hyperdrive.md
+================================================
+# How to create a full peer-to-peer filesystem with Hyperdrive
+
+[`Hyperdrive`](https://github.com/holepunchto/hyperdrive) is a secure, real-time distributed file system designed for easy peer-to-peer file sharing. In the same way that a Hyperbee is just a wrapper around a Hypercore, a Hyperdrive is a wrapper around two Hypercores: one is a Hyperbee index for storing file metadata, and the other is used to store file contents.
+
+This How-to consists of three applications: `drive-writer-app`, `drive-reader-app` and `drive-bee-reader-app`.
+
+Now let's mirror a local directory into a Hyperdrive, replicate it with a reader peer, who then mirrors it into their own local copy. When the writer modifies its drive, by adding, removing, or changing files, the reader's local copy will be updated to reflect that. To do this, we'll use two additional tools: [`MirrorDrive`](https://github.com/holepunchto/mirror-drive) and [`LocalDrive`](https://github.com/holepunchto/localdrive), which handle all interactions between Hyperdrives and the local filesystem.
+
+Start by creating the `drive-writer-app` project with these commands:
+
+```
+mkdir drive-writer-app
+cd drive-writer-app
+pear init -y -t terminal
+npm install corestore localdrive hyperswarm hyperdrive debounceify b4a pear-stdio
+```
+
+Alter `driver-writer-app/index.js` to the following:
+
+```javascript
+import Hyperswarm from 'hyperswarm'
+import Hyperdrive from 'hyperdrive'
+import Localdrive from 'localdrive'
+import Corestore from 'corestore'
+import debounce from 'debounceify'
+import b4a from 'b4a'
+import stdio from 'pear-stdio'
+
+// create a Corestore instance 
+const store = new Corestore(Pear.config.storage)
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+// replication of the corestore instance on connection with other peers
+swarm.on('connection', conn => store.replicate(conn))
+
+// A local drive provides a Hyperdrive interface to a local directory
+const local = new Localdrive('./writer-dir')
+
+// A Hyperdrive takes a Corestore because it needs to create many cores
+// One for a file metadata Hyperbee, and one for a content Hypercore
+const drive = new Hyperdrive(store)
+
+// wait till the properties of the hyperdrive instance are initialized
+await drive.ready()
+
+// Import changes from the local drive into the Hyperdrive
+const mirror = debounce(mirrorDrive)
+
+const discovery = swarm.join(drive.discoveryKey)
+await discovery.flushed()
+
+console.log('drive key:', b4a.toString(drive.key, 'hex'))
+
+// start the mirroring process (i.e copying) of content from writer-dir to the drive
+// whenever something is entered (other than '/n' or Enter )in the command-line
+stdio.in.setEncoding('utf-8')
+stdio.in.on('data', (data) => {
+  if (!data.match('\n')) return
+  mirror()
+})
+
+// this function copies the contents from writer-dir directory to the drive
+async function mirrorDrive () {
+  console.log('started mirroring changes from \'./writer-dir\' into the drive...')
+  const mirror = local.mirror(drive)
+  await mirror.done()
+  console.log('finished mirroring:', mirror.count)
+}
+```
+
+Open the `drive-writer-app` with:
+
+```
+pear run --dev .
+```
+
+The `drive-writer-app` creates a `LocalDrive` instance for a local directory and then mirrors the `LocalDrive` into the Hyperdrive instance. 
+
+The store used to create the Hyperdrive instance is replicated using Hyperswarm to make the data of Hyperdrive accessible to other peers. 
+
+It outputs a key which will be passed to `drive-reader-app` upon execution.
+
+Leave the `driver-writer-app` running and in a new terminal create the `drive-reader-app` project with these commands:
+
+```
+mkdir drive-reader-app
+cd drive-reader-app
+pear init -y -t terminal
+npm install corestore localdrive hyperswarm hyperdrive debounceify b4a
+```
+
+Adjust the `drive-reader-app/index.js` file to:
+
+```javascript
+import Hyperswarm from 'hyperswarm'
+import Hyperdrive from 'hyperdrive'
+import Localdrive from 'localdrive'
+import Corestore from 'corestore'
+import debounce from 'debounceify'
+import b4a from 'b4a'
+
+const key = Pear.config.args[0]
+
+if (!key) throw new Error('provide a key')
+
+// create a Corestore instance
+const store = new Corestore(Pear.config.storage)
+
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+// replication of store on connection with other peers
+swarm.on('connection', conn => store.replicate(conn))
+
+// create a local copy of the remote drive
+const local = new Localdrive('./reader-dir')
+
+// create a hyperdrive using the public key passed as a command-line argument
+const drive = new Hyperdrive(store, b4a.from(key, 'hex'))
+
+// wait till all the properties of the drive are initialized
+await drive.ready()
+
+const mirror = debounce(mirrorDrive)
+
+// call the mirror function whenever content gets appended 
+// to the Hypercore instance of the hyperdrive
+drive.core.on('append', mirror)
+
+// join a topic
+swarm.join(drive.discoveryKey, { client: true, server: false })
+
+// start the mirroring process (i.e copying the contents from remote drive to local dir)
+mirror()
+
+async function mirrorDrive () {
+  console.log('started mirroring remote drive into \'./reader-dir\'...')
+  const mirror = drive.mirror(local)
+  await mirror.done()
+  console.log('finished mirroring:', mirror.count)
+}
+```
+
+The `drive-reader-app` creates a `LocalDrive` instance for a local directory and then mirrors the contents of the local Hyperdrive instance into the `LocalDrive` instance (which will write the contents to the local directory).
+
+Run the `drive-reader-app` with `pear run --dev .`, passing the key that the `drive-writer-app` already output:
+
+```
+pear run --dev . <SUPPLY_KEY_HERE>
+```
+
+`LocalDrive` does not create the directory passed to it until something has been written, so create the `drive-writer-app/writer-dir` (`mkdir writer-dir`) and then add/remove/modify files inside `drive-writer-app/writer-dir` then press `Enter` in the writer's terminal (to import the local changes into the writer's drive). Observe that all new changes mirror into `reader-app/reader-dir`.
+
+Just as a Hyperbee is **just** a Hypercore, a Hyperdrive is **just** a Hyperbee - which is **just** a Hypercore.
+
+In a new terminal, create the `drive-bee-reader-app` project with these commands:
+
+```
+mkdir drive-bee-reader-app
+cd drive-bee-reader-app
+pear init -y -t terminal
+npm install corestore hyperswarm hyperdrive hyperbee b4a
+```
+
+Adjust the `drive-bee-reader-app/index.js` file to:
+
+```javascript
+import Hyperswarm from 'hyperswarm'
+import Corestore from 'corestore'
+import Hyperbee from 'hyperbee'
+import b4a from 'b4a'
+
+const key = Pear.config.args[0]
+if (!key) throw new Error('provide a key')
+
+// create a Corestore instance 
+const store = new Corestore(Pear.config.storage)
+
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+// replicate corestore instance on connection with other peers
+swarm.on('connection', conn => store.replicate(conn))
+
+// create/get the hypercore instance using the public key supplied as command-line arg
+const core = store.get({ key: b4a.from(key, 'hex') })
+
+// create a hyperbee instance using the hypercore instance
+const bee = new Hyperbee(core, {
+  keyEncoding: 'utf-8',
+  valueEncoding: 'json'
+})
+
+// wait till the properties of the hypercore instance are initialized
+await core.ready()
+
+swarm.join(core.discoveryKey)
+await swarm.flush()
+
+// execute the listBee function whenever the data is appended to the underlying hypercore
+core.on('append', listBee)
+
+listBee()
+
+// listBee function will list the key-value pairs present in the hyperbee instance
+async function listBee () {
+  console.log('\n***************')
+  console.log('hyperbee contents are now:')
+  for await (const node of bee.createReadStream()) {
+    console.log('  ', node.key, '->', node.value)
+  }
+}
+```
+
+Now the Hyperdrive can be inspected as though it were a Hyperbee, and log out some file metadata.
+
+Execute the `drive-bee-reader-app` with `pear run --dev .`, passing it the key output by the `driver-writer-app`:
+
+```
+pear run --dev . <SUPPLY_KEY_HERE>
+```
+
+The `drive-bee-reader-app` creates a Hyperbee instance using the Hypercore instance created with the copied public key. Every time the Hyperbee is updated (an `append` event is emitted on the underlying Hypercore), all file metadata nodes will be logged out.
+
+Try adding or removing a few files from the writer's data directory, then pressing `Enter` in the writer's terminal to mirror the changes.
+
+
+
+================================================
+FILE: howto/replicate-and-persist-with-hypercore.md
+================================================
+# How to replicate and persist with Hypercore
+
+In the HyperDHT How-to ([Connect Two Peers](./connect-two-peers-by-key-with-hyperdht.md)) and the Hyperswarm How-to ([Connect Many Peers](./connect-to-many-peers-by-topic-with-hyperswarm.md)), peers can exchange chat messages so long as both are online at the same time and directly connected. The application is ephemeral, the messages are not persisted - they will be lost if the recipient is offline. Hypercore provides the persistence.
+
+[`Hypercore`](https://github.com/holepunchto/hypercore) is a secure, distributed append-only log. It is built for sharing enormous datasets and streams of real-time data. It has a secure transport protocol, making it easy to build fast and scalable peer-to-peer applications.
+
+{% embed url="https://www.youtube.com/watch?v=5t2mOi0BeDg" %} Build with Pear - Episode 05: Replication and Persistence {% embeded %}
+
+In this guide we'll extend the ephemeral chat example in [Connect Many Peers](./connect-to-many-peers-by-topic-with-hyperswarm.md) but using Hypercore to add many significant new features:
+
+* **Persistence**: The owner of the Hypercore can add messages at any time, and they'll be persisted to disk. Whenever they come online, readers can replicate these messages over Hyperswarm.
+* **Many Readers:** New messages added to the Hypercore will be broadcast to interested readers. The owner gives each reader a reading capability (`core.key`) and a corresponding discovery key (`core.discoveryKey`). The former is used to authorize the reader, ensuring that they have permission to read messages, and the latter is used to discover the owner (and other readers) on the swarm.
+
+The following example consists of two Pear Terminal Applications: `reader-app` and `writer-app`. When these two applications are opened, two peers are created and connected to each other. A Hypercore is used to store the data entered into the command line.
+
+The `writer-app` code stores the data entered into the command line to the Hypercore instance. The Hypercore instance is replicated with other peers using Hyperswarm.
+
+
+Create the `writer-app` project with these commands:
+
+```
+mkdir writer-app
+cd writer-app
+pear init -y -t terminal
+npm install bare-path bare-process hypercore hyperswarm b4a
+```
+
+Alter the generated `writer-app/index.js` file to the following:
+
+```javascript
+import path from 'bare-path'
+import process from 'bare-process'
+import Hyperswarm from 'hyperswarm'
+import Hypercore from 'hypercore'
+import b4a from 'b4a'
+
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+const core = new Hypercore(path.join(Pear.config.storage, 'writer-storage'))
+
+// core.key and core.discoveryKey will only be set after core.ready resolves
+await core.ready()
+console.log('hypercore key:', b4a.toString(core.key, 'hex'))
+
+// Append all stdin data as separate blocks to the core
+process.stdin.on('data', (data) => core.append(data))
+
+// core.discoveryKey is *not* a read capability for the core
+// It's only used to discover other peers who *might* have the core
+swarm.join(core.discoveryKey)
+swarm.on('connection', conn => core.replicate(conn))
+```
+
+
+The `reader-app` uses Hyperswarm to connect to the previously initiated peer and synchronize the local Hypercore instance with the Hypercore instance of the writer.
+
+Create the `reader-app` project with these commands:
+
+```
+mkdir reader-app
+cd reader-app
+pear init -y -t terminal
+npm install bare-path hypercore hyperswarm
+```
+
+Alter the generated `reader-app/index.js` file to the following:
+
+
+```javascript
+import path from 'bare-path'
+import Hyperswarm from 'hyperswarm'
+import Hypercore from 'hypercore'
+
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+const core = new Hypercore(path.join(Pear.config.storage, 'reader-storage'), Pear.config.args[0])
+await core.ready()
+
+swarm.join(core.discoveryKey)
+swarm.on('connection', conn => core.replicate(conn))
+
+// swarm.flush() will wait until *all* discoverable peers have been connected to
+await swarm.flush()
+
+await core.update()
+
+let position = core.length
+console.log(`Skipping ${core.length} earlier blocks...`)
+for await (const block of core.createReadStream({ start: core.length, live: true })) {
+  console.log(`Block ${position++}: ${block}`)
+}
+```
+
+In one terminal, open `writer-app` with `pear run --dev .`.
+
+```
+cd writer-app
+pear run --dev .
+```
+
+The `writer-app` will output the Hypercore key.
+
+In another terminal, open the `reader-app` and pass it the key:
+
+```
+cd reader-app
+pear run --dev . <SUPPLY THE KEY HERE>
+```
+
+As inputs are made to the terminal running the writer application, outputs should be shown in the terminal running the reader application.
+
+
+
+================================================
+FILE: howto/share-append-only-databases-with-hyperbee.md
+================================================
+
+# How to share Append-Only Databases with Hyperbee
+
+[Hyperbee](https://github.com/holepunchto/hyperbee) is an append-only B-tree based on Hypercore. It provides a key/value-store API with methods to insert and get key/value pairs, perform atomic batch insertions, and create sorted iterators.
+
+This How-to consists of three applications: `bee-writer-app` , `bee-reader-app` and `core-reader-app`.
+
+The `bee-writer-app` stores 100k entries from a given dictionary file into a Hyperbee instance. The Corestore instance used to create the Hyperbee instance is replicated using Hyperswarm. This enables other peers to replicate their Corestore instance and sparsely (on-demand) download the dictionary data into their local Hyperbee instances.
+
+Start the `bee-writer-app` project with the following commands:
+
+```
+mkdir bee-writer-app
+cd bee-writer-app
+pear init -y -t terminal
+npm install corestore hyperswarm hyperbee b4a bare-fs
+```
+
+[Click here to save `dict.json`](../assets/dict.json).
+
+Save it into `bee-writer-app` directory. The `dict.json` file contains 100K dictionary words.
+
+Alter the generated `bee-writer-app/index.js` file to the following
+
+```javascript
+import fsp from 'bare-fs/promises'
+import Hyperswarm from 'hyperswarm'
+import Corestore from 'corestore'
+import Hyperbee from 'hyperbee'
+import b4a from 'b4a'
+// create a corestore instance with the given location
+const store = new Corestore(Pear.config.storage)
+
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+// replication of corestore instance
+swarm.on('connection', conn => store.replicate(conn))
+
+// creation of Hypercore instance (if not already created)
+const core = store.get({ name: 'my-bee-core' })
+
+// creation of Hyperbee instance using the core instance 
+const bee = new Hyperbee(core, {
+  keyEncoding: 'utf-8',
+  valueEncoding: 'utf-8'
+})
+
+// wait till all the properties of the hypercore are initialized
+await core.ready()
+
+// join a topic
+const discovery = swarm.join(core.discoveryKey)
+
+// Only display the key once the Hyperbee has been announced to the DHT
+discovery.flushed().then(() => {
+  console.log('bee key:', b4a.toString(core.key, 'hex'))
+})
+
+// Only import the dictionary the first time this script is executed
+// The first block will always be the Hyperbee header block
+if (core.length <= 1) {
+  console.log('importing dictionary...')
+  const dict = JSON.parse(await fsp.readFile('./dict.json'))
+  const batch = bee.batch()
+  for (const { key, value } of dict) {
+    await batch.put(key, value)
+  }
+  await batch.flush()
+} else {
+  // Otherwise just seed the previously-imported dictionary
+  console.log('seeding dictionary...')
+}
+```
+
+Run the app with:
+
+```
+pear run --dev .
+```
+
+Start the `bee-reader-app` project in a new terminal with the following commands:
+
+```
+mkdir bee-reader-app
+cd bee-reader-app
+pear init -y -t terminal
+npm install corestore hyperswarm hyperbee b4a bare-pipe
+```
+
+The `bee-reader-app` creates a `Corestore` instance and replicates it using the `Hyperswarm` instance to the same topic as `bee-writer-app`. On every word entered in the command line, it will download the respective data to the local `Hyperbee` instance.
+
+
+Alter the generated `bee-reader-app/index.js` file to the following
+
+```javascript
+import Hyperswarm from 'hyperswarm'
+import Corestore from 'corestore'
+import Hyperbee from 'hyperbee'
+import Pipe from 'bare-pipe'
+import b4a from 'b4a'
+
+const key = Pear.config.args[0]
+
+if (!key) throw new Error('provide a key')
+
+// creation of a corestore instance 
+const store = new Corestore(Pear.config.storage)
+
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+// replication of the corestore instance on connection with other peers
+swarm.on('connection', (conn) => store.replicate(conn))
+
+// create or get the hypercore using the public key supplied as command-line argument
+const core = store.get({ key: b4a.from(key, 'hex') })
+
+// create a hyperbee instance using the hypercore instance
+const bee = new Hyperbee(core, {
+  keyEncoding: 'utf-8',
+  valueEncoding: 'utf-8'
+})
+
+// wait till the hypercore properties to be initialized
+await core.ready()
+
+// logging the public key of the hypercore instance
+console.log('core key here is:', core.key.toString('hex'))
+
+// Attempt to connect to peers
+swarm.join(core.discoveryKey)
+
+const stdin = new Pipe(0)
+
+stdin.on('data', (data) => {
+  const word = data.toString().trim()
+  if (!word.length) return
+  bee.get(word).then(node => {
+    if (!node || !node.value) console.log(`No dictionary entry for ${word}`)
+    else console.log(`${word} -> ${node.value}`)
+    setImmediate(console.log) // flush hack
+  }, console.error)
+})
+```
+
+Open the `bee-reader-app` and pass it the core key:
+
+```
+pear run --dev . <SUPPLY KEY HERE>
+```
+
+Query the database by entering a key to lookup into the `bee-reader-app` terminal and hitting return.
+
+Each application has dedicated storage at `Pear.config.storage`. Try logging out `Pear.config.storage` for the `bee-reader-app` and then look at the disk space for that storage path after each query. Notice that it's significantly smaller than `bee-writer-app`! This is because Hyperbee only downloads the Hypercore blocks it needs to satisfy each query, a feature we call **sparse downloading.**
+
+Importantly, a Hyperbee is **just** a Hypercore, where the tree nodes are stored as Hypercore blocks.
+
+Finally create a `core-reader-app` project:
+
+```
+mkdir core-reader-app
+cd core-reader-app
+pear init -y -t terminal
+npm install corestore hyperswarm hyperbee b4a
+```
+
+
+Alter the generated `core-reader-app/index.js` file to the following
+
+```javascript
+import Hyperswarm from 'hyperswarm'
+import Corestore from 'corestore'
+import b4a from 'b4a'
+
+import { Node } from 'hyperbee/lib/messages.js'
+
+const key = Pear.config.args[0]
+if (!key) throw new Error('provide a key')
+
+// creation of a corestore instance 
+const store = new Corestore('./reader-storage')
+
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+// replication of the corestore instance on connection with other peers
+swarm.on('connection', conn => store.replicate(conn))
+
+// create or get the hypercore using the public key supplied as command-line argument
+const core = store.get({ key: b4a.from(key, 'hex') })
+// wait till the properties of the hypercore instance are initialized
+await core.ready()
+
+// join a topic
+swarm.join(core.discoveryKey)
+await swarm.flush()
+
+// update the meta-data information of the hypercore instance
+await core.update()
+
+const seq = core.length - 1
+const lastBlock = await core.get(core.length - 1)
+
+// print the information about the last block or the latest block of the hypercore instance
+console.log(`Raw Block ${seq}:`, lastBlock)
+console.log(`Decoded Block ${seq}`, Node.decode(lastBlock))
+```
+
+Open the `core-reader-app` with `pear run --dev .`, passing the core key to it:
+
+```
+pear run --dev . <SUPPLY KEY HERE>
+```
+
+Now we can examine the Hyperbee as if it were just a Hypercore.
+
+The `core-reader-app` will continually download and log the last block of the Hypercore containing the Hyperbee data. Note that these blocks are encoded using Hyperbee's `Node` encoding, which has been imported directly from `Hyperbee` here for the purposes of explanation.
+
+
+
+================================================
+FILE: howto/work-with-many-hypercores-using-corestore.md
+================================================
+# How to work with many Hypercores using Corestore
+
+An append-only log is powerful on its own, but it's most useful as a building-block for constructing larger data structures, such as databases or filesystems. Building these data structures often requires many cores, each with different responsibilities. For example, Hyperdrive uses one core to store file metadata and another to store file contents.
+
+[`Corestore`](https://github.com/holepunchto/corestore) is a Hypercore factory that makes it easier to manage large collections of named Hypercores. This how-to demonstrates a pattern often in use: co-replicating many cores using Corestore, where several 'internal cores' are linked to from a primary core. Only the primary core is announced on the swarm -- the keys for the others are recorded inside of that core.
+
+In [How to replicate and persist with Hypercore](./replicate-and-persist-with-hypercore.md), only single Hypercore instance was replicated. But in this how-to, we will replicate a single Corestore instance, which will internally manage the replication of a collection of Hypercores. We will achieve this with two Pear Terminal Applications: `multicore-writer-app` and `multicore-reader-app`.
+
+> Only one Corestore per application is needed. This is the recommended best practices to make managing Hypercores efficient and to avoid pitfalls from having multiple Corestores. A single Corestore will:
+> - Manage multiple sessions for the same Hypercore.
+> - Requires only one replication stream per peer connection.
+> - Simplifies referring to Hypercores by a name.
+
+Create the `multicore-writer-app` project with these commands:
+
+```
+mkdir multicore-writer-app
+cd multicore-writer-app
+pear init -y -t terminal
+npm install bare-process corestore hyperswarm b4a
+```
+
+Alter the generated `multicore-writer-app/index.js` file to the following
+
+```javascript
+import Hyperswarm from 'hyperswarm'
+import Corestore from 'corestore'
+import b4a from 'b4a'
+import process from 'bare-process'
+
+const store = new Corestore(Pear.config.storage)
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+// A name is a purely-local, and maps to a key pair. It's not visible to readers.
+// Since a name always corresponds to a key pair, these are all writable
+const core1 = store.get({ name: 'core-1', valueEncoding: 'json' })
+const core2 = store.get({ name: 'core-2' })
+const core3 = store.get({ name: 'core-3' })
+await Promise.all([core1.ready(), core2.ready(), core3.ready()])
+
+console.log('main core key:', b4a.toString(core1.key, 'hex'))
+
+// Here we'll only join the swarm with the core1's discovery key
+// We don't need to announce core2 and core3, because they'll be replicated with core1
+swarm.join(core1.discoveryKey)
+
+// Corestore replication internally manages to replicate every loaded core
+// Corestore *does not* exchange keys (read capabilities) during replication.
+swarm.on('connection', (conn) => store.replicate(conn))
+
+// Since Corestore does not exchange keys, they need to be exchanged elsewhere.
+// Here, we'll record the other keys in the first block of core1.
+if (core1.length === 0) {
+  await core1.append({
+    otherKeys: [core2, core3].map((core) => b4a.toString(core.key, 'hex'))
+  })
+}
+
+// Record all short messages in core2, and all long ones in core3
+process.stdin.on('data', (data) => {
+  if (data.length < 5) {
+    console.log('appending short data to core2')
+    core2.append(data)
+  } else {
+    console.log('appending long data to core3')
+    core3.append(data)
+  }
+})
+```
+
+The `multicore-writer-app` uses a Corestore instance to create three Hypercores, which are then replicated with other peers using `Hyperswarm`. The keys for the second and third cores are stored in the first core (the first core bootstraps the system). Messages entered into the command line are written into the second and third cores, depending on the length of the message. The main core key logged into the command line so that it can be passed to the `multicore-reader-app`.
+
+The `multicore-reader-app` connects to the previous peer with `Hyperswarm` and replicates the local `Corestore` instance to receive the data from it. This requires the copied key to be supplied as an argument when executing the file, which will then be used to create a core with the same public key as the other peer (i.e., the same discovery key for both the reader and writer peers).
+
+```
+mkdir multicore-reader-app
+cd multicore-reader-app
+pear init -y -t terminal
+npm install corestore hyperswarm b4a
+```
+
+Alter the generated `multicore-reader-app/index.js` file to the following
+
+```javascript
+import Corestore from 'corestore'
+import Hyperswarm from 'hyperswarm'
+import b4a from 'b4a'
+
+if (!Pear.config.args[0]) throw new Error('provide a key')
+
+const key = b4a.from(Pear.config.args[0], 'hex')
+
+const store = new Corestore(Pear.config.storage)
+await store.ready()
+
+const swarm = new Hyperswarm()
+Pear.teardown(() => swarm.destroy())
+
+// replication of corestore instance on every connection
+swarm.on('connection', (conn) => store.replicate(conn))
+
+// creation/getting of a hypercore instance using the key passed
+const core = store.get({ key, valueEncoding: 'json' })
+// wait till all the properties of the hypercore instance are initialized
+await core.ready()
+
+swarm.join(core.discoveryKey)
+await swarm.flush()
+
+// update the meta-data of the hypercore instance
+await core.update()
+
+if (core.length === 0) {
+  throw new Error('Could not connect to the writer peer')
+}
+
+// getting cores using the keys stored in the first block of main core
+const { otherKeys } = await core.get(0)
+for (const key of otherKeys) {
+  const core = store.get({ key: b4a.from(key, 'hex') })
+  // on every append to the hypercore, 
+  // download the latest block of the core and log it to the console
+  core.on('append', () => {
+    const seq = core.length - 1
+    core.get(seq).then(block => {
+      console.log(`Block ${seq} in Core ${key}: ${block}`) 
+    })
+  })
+}
+```
+
+In one terminal, open `multicore-writer-app` with `pear run --dev .`.
+
+```
+cd  multicore-writer-app
+pear run --dev .
+```
+
+The `multicore-writer-app` will output the main core key.
+
+In another terminal, open the `multicore-reader-app` and pass it the key:
+
+```
+cd multicore-reader-app
+pear run --dev . <SUPPLY THE KEY HERE>
+```
+
+As inputs are made to the terminal running the writer application, outputs should be shown in the terminal running the reader application.
+
+
+
+================================================
+FILE: reference/api.md
+================================================
+# Application Programming Interface (API)
+
+Pear is built on [Bare](https://github.com/holepunchto/bare). Pear applications have a `global.Pear` object and a`global.Bare` object.
+
+* [global.Pear](#globalpear)
+* [global.Bare](#globalbare)
+
+## `global.Pear`<a name="globalpear"></a>
+
+<mark style="background-color: #8484ff;">**stable**</mark>
+
+The Pear Platform API is made available globally as `Pear`.
+
+The `Pear` API is designed to be as minimal as possible.
+
+The majority of capabilities are supplied via [Pear Modules](../README.md#pear-modules).
+
+### `Pear.app <Object>`<a name="#pear-app"></a>
+
+Contains application information. Supersedes `Pear.config`.
+
+#### `Pear.app.key <Buffer|null>`<a name="pear-app-key"></a>
+
+A buffer of the application key. If running from disk, `Pear.app.key` is null.
+
+#### `Pear.app.length <Integer>`<a name="pear-app-length"></a>
+
+The application drive length. The application version consists of `Pear.app.key`, `Pear.app.length` and `Pear.app.fork`.
+
+#### `Pear.app.fork <Integer>`<a name="pear-app-fork"></a>
+
+The application drive fork count. A fork is where the append-only log of the drive is truncated.
+
+The application version consists of `Pear.app.key`, `Pear.app.length` and `Pear.app.fork`.
+
+#### `Pear.app.alias <String|null>`<a name="pear-app-alias"></a>
+
+Given an application that is run from a pear:// link with an alias it, contains that alias.
+For example the `Pear.app.alias` for `pear run pear://keet` would be `keet`.
+
+#### `Pear.app.dev <Boolean>`<a name="pear-app-dev"></a>
+
+Whether the application is in development mode.
+
+Note that development mode means, the application has been run with the `--dev` flag.
+
+Development mode is not the same as development environment. Development environment equates to running from disk.
+
+For example, to detect both development mode & environment:
+
+```js
+const fromDisk = Pear.app.key === null
+const isDev = fromDisk && Pear.app.dev
+```
+
+#### `Pear.app.name <String>`<a name="pear-app-name"></a>
+
+Application name.
+
+#### `Pear.app.main <String>`<a name="pear-app-main"></a>
+
+Application entry file.
+
+#### `Pear.app.channel <String|null>`<a name="pear-app-channel"></a>
+
+Application release/staging channel.
+
+#### `Pear.app.storage <String>`<a name="pear-app-storage"></a>
+
+Application storage path
+
+#### `Pear.app.options <Object>`<a name="pear-app-options"></a>
+
+Configuration options.
+The `pear` configuration object as supplied via an applications `package.json` file.
+
+**References**
+
+* [Configuration](./configuration.md)
+
+#### `Pear.app.env <Object>`<a name="pear-app-env"></a>
+
+The environment variables that an application was started with, as key-value pairs in an object.
+
+#### `Pear.app.flags <Object>`<a name="pear-app-flags"></a>
+
+Parsed command-line flag values as supplied when an application was started.
+
+#### `Pear.app.checkout <String>`<a name="pear-app-checkout"></a>
+
+The value of the [`pear run --checkout`](./cli.md#pear-run) flag. Same as [`Pear.app.flags.checkout`](#pear-app-checkout).
+
+**References**
+
+* [`pear run`](./cli.md#pear-run)
+* [`Pear.app.flags`](./#pear-app-flags)
+
+#### `Pear.app.storage <String>`<a name="pear-app-storage"></a>
+
+Application storage path.
+
+#### `Pear.app.args <Array>`<a name="pear-app-args"></a>
+
+Command-line application arguments passed like `pear run --dev . --some arg`.
+
+#### `Pear.app.release <Number>`<a name="pear-app-release"></a>
+
+The current release length as marked by the `pear release` command.
+
+**References**
+
+* [`pear release`](./cli.md#pear-release)
+
+#### `Pear.app.link <String>`<a name="pear-app-link"></a>
+
+The link that was passed to `pear run` with alias resolved to key.
+
+Includes any potential pathname, query or fragment.
+
+**References**
+
+* [`pear run`](./cli.md)
+
+#### `Pear.app.links <Object|Array>`<a name="pear-app-links"></a>
+
+Holds trusted Pear application links and domains as specified in the `links` field inside `package.json`.
+
+**References**
+* [pear.links](./configuration.md#pear-links)
+* [`pear run`](./cli.md#pear-run)
+
+#### `Pear.app.routes <String>`<a name="pear-app-routes"></a>
+
+The configuration provided [`pear.routes`](./configuration.md#pear-routes) mapping object.
+
+#### `Pear.app.entrypoint <String>`<a name="pear-app-entrypoint"></a>
+
+The link pathname (`pear://<key>/<pathname>`), after any route mappings have been applied per [`pear.routes`](./configuration.md#pear-routes).
+
+Includes the leading `/`, e.g given `pear://foo/bar/baz`, `Pear.app.entrypoint` would be `/bar/baz`.
+
+Only `Pear.app.entrypoint` supports route-mapping via the [`pear.routes`](./configuration.md#pear-routes) mapping object. `Pear.app.route` is provides access the raw pathname, including the leading slash (`/`), while `Pear.app.linkData` is legacy, excludes the slash, but is still supported.
+
+* [`Pear.app.route`](#pear-app-entrypoint)
+* [`Pear.app.routes`](#pear-app-routes)
+* [`pear.routes`](./configuration.md#pear-routes)
+
+#### `Pear.app.fragment <String>`<a name="pear-app-fragment"></a>
+
+The link hash, without the leading `#`.
+
+Given `pear://<key>/<pathname>#frag` `Pear.app.fragment` would be `frag`.
+
+#### `Pear.app.query <String>`<a name="pear-app-query"></a>
+
+The link query string, without the leading `?`.
+
+Given `pear://<key>/<pathname>?qs` `Pear.app.query` would be `qs`.
+
+#### `Pear.app.route <String>`<a name="pear-app-route"></a>
+
+The link pathname (`pear://<key>/<pathname>`), prior to any route mappings being applied.
+
+Includes the leading `/`, e.g given `pear://foo/bar/baz`, `Pear.app.route` would be `/bar/baz`.
+
+**References**
+
+* [`Pear.app.entrypoint`](#pear-app-entrypoint)
+* [`Pear.app.routes`](#pear-app-routes)
+* [`pear.routes`](./configuration.md#pear-routes)
+
+#### `Pear.app.linkData <String>`<a name="pear-app-linkData"></a>
+
+Holds just the data portion of a Pear link.
+
+The Pear link of an application. Takes the form `pear://<key>/<data>`.
+
+In development, `pear://dev/<data>`.
+
+Unlike `Pear.app.route` and `Pear.app.entrypoint` *does not* include the leading slash (`/`).
+
+Legacy but still supported. Prefer `Pear.app.entrypoint` or `Pear.app.route`.
+
+**References**
+
+* [`Pear.app.entrypoint`](#pear-app-entrypoint)
+* [`Pear.app.route`](#pear-app-route)
+* [Pear.app.link](#pear-app-link)
+* [`pear run`](./cli.md#pear-run)
+
+#### `Pear.app.checkpoint <Any>`<a name="pear-app-checkpoint"></a>
+
+Holds state as set by `Pear.checkpoint()`. When an application restarts it will hold the most recent value passed to `Pear.checkpoint()`.
+
+Stores state that will be available as `Pear.app.checkpoint` next time the application starts.
+
+The `Pear.app.checkpoint` property immediately reflects the latest checkpoint.
+
+The returned `Promise` will resolve once the checkpoint has been successfully stored.
+
+**References**
+
+* [Pear.checkpoint()](#pear-checkpoint-any)
+
+#### `Pear.app.release <Integer>`<a name="pear-app-release"></a>
+
+Application release sequence integer.
+
+#### `Pear.app.flags <Object>`<a name="pear-app-flags"></a>
+
+Parsed `pear run` flags.
+
+#### `Pear.app.applink <String>` <a name="pear-app-applink"></a>
+
+Pear application link. May be a `pear://` link or a local directory.
+
+#### `Pear.app.dir <String>` <a name="pear-app-dir"></a>
+
+The current working directory of `pear run` when the application was started.
+
+#### `Pear.app.dht.nodes <Array<Object>>`<a name="pear-app-dht-nodes"></a>
+
+A list of known [DHT](https://github.com/holepunchto/hyperdht) nodes of the form `{ host: <String>, port: <Number> }`. The nodes are set when the Pear application is started.
+
+Unless started with a custom set of bootstrap nodes, Pear caches known nodes to speed up connecting to the swarm and to make it more resilient.
+
+#### `Pear.app.dht.bootstrap <Array<Object>>` <a name="pear-app-dht-bootstrap"></a>
+
+A list of custom bootstrap nodes Pear is started with of the form `{ host: <String>, port: <Number> }`.
+
+#### `Pear.app.assets  <String>`<a name="pear-app-assets"></a>
+
+Advanced / integration purposes.
+
+Per [`pear-assets`](./configuration.md#pear-assets) configuration assets are fetched and stored to disk. Use `Pear.app.assets[namespace].path` to get the path that given asset is stored to.
+
+Takes the form `{ [namespace]: { link <String>, ns <String>, path <String>, name <String>, only <Array<String>>, bytes <Integer> } }`. `namespace` is per the property name on the assets object. By convention, should be describe the asset type, for example: `ui`.
+
+* `link` - Configuration supplied `pear://<fork>.<length>.<key>`
+* `ns` - Namespace - same as the property name
+* `path` - The path that Pear stored the asset to on-disk
+* `name` - Configuration supplied name
+* `only` - Configuration supplied only array
+* `bytes` - The total bytes used by asset on-disk
+
+Example:
+
+```js
+{
+  "ui": {
+    "link": "pear://0.940.cktxzetiwt6un3ado5kgqedge6ya4nfazjckzq76zcapefwxakdy",
+    "ns": "ui",
+    "path": "/Users/xxx/Library/Application Support/pear/assets/0c82035d08c00ae4da2f307eb5d2c1fd",
+    "name": "Pear Runtime",
+    "only": [
+      "/boot.bundle",
+      "/by-arch/%HOST%",
+      "/prebuilds/%HOST%"
+    ],
+    "bytes": 259158801
+  }
+}
+```
+
+#### `Pear.app.prerunning <Boolean>`<a name="pear-app-prerunning"></a>
+
+Whether the current application is a [`pre`](./configuration.md#pear-pre) script.
+
+#### `Pear.app.startId <String>`<a name="pear-app-startid"></a>
+
+Advanced. Integration purposes.
+
+The application start identifier. Can be used to register a [`pear-ipc`](https://github.com/holepunchto/pear-ipc) client to an applicaiton, with
+`ipc.identify()`
+
+#### `Pear.app.swapDir <String>`<a name="pear-app-swapdir"></a>
+
+Advanced. Integration purposes.
+
+The active swap directory with Pear platform directory.
+
+#### `Pear.app.pearDir <String>`<a name="pear-app-peardir"></a>
+
+Advanced. Integration purposes.
+
+Pear platform directory.
+
+### `Pear.checkpoint(<Any>) => Promise`<a name="pear-checkpoint"></a>
+
+Stores state that will be available as `Pear.app.checkpoint` next time the application starts.
+
+The `Pear.app.checkpoint` property immediately reflects the latest checkpoint.
+
+The returned `Promise` will resolve once the checkpoint has been successfully stored.
+
+**References**
+
+* [Pear.app.checkpoint](#pear--config-checkpoint-any)
+
+### `Pear.teardown(fn <Async Function|Function>)`<a name="pear-teardown"></a>
+
+Register application clean-up handlers to be called when an application begins to unload.
+
+May be called multiple times to register multiple teardown handlers.
+
+Functions supplied to teardown will be executed in order of registration when
+an application begins to unload. Any promise returned from each supplied function
+will be waited upon until resolution before calling the next teardown handler.
+
+### `Pear.argv`<a name="pear-argv"></a>
+
+The command line arguments passed to the process when launched.
+
+### `Pear.pid`<a name="pear-pid"></a>
+
+The ID of the current process.
+
+### `Pear.exitCode`<a name="pear-exitcode"></a>
+
+The code that will be returned once the process exits. If the process is exited using `Bare.exit()` without specifying a code, `Bare.exitCode` is used.
+
+### `Pear.exit(code)`<a name="pear-exit"></a>
+
+Exits the process with the provided exit code. Follows Pear teardown flow, whereas `Bare.exit()` does not.
+
+### `Pear.constructor.CUTOVER` <a name="pear-constructor-cutover"></a> (Integration)
+
+> NOTE: Integration APIs may change.
+
+For auto-cutover opt-out do `Pear.constructor.CUTOVER = false` in the first-tick.
+
+Cutover signals the end of the application init phase and instructs sidecar to stop buffering critical streams, such as updates.
+
+This stops an internal `ipc.cutover` call to the sidecar, indicating that a manual call will be made later which in turn allows child processes to listen to critical streams without any data loss but the onus is then on child process to call cutover in order free resources in the sidecar.
+
+### `Pear.constructor.COMPAT` <a name="pear-constructor-compat"></a> (Integration)
+
+> NOTE: Integration APIs may change.
+
+Compat-mode opt-in. See [./migration.md#compat-mode](./migration.md#compat-mode)
+
+### `Pear.constructor.RTI` <a name="pear-constructor-rit"></a> (Integration)
+
+> NOTE: Integration APIs may change.
+
+Runtime Information. Used by additional runtimes to bootstrap runtime state at boot. Used by [`pear-run`](https://github.com/holepunchto/pear-run).
+
+### `Pear.constructor.IPC` <a name="pear-constructor-ipc"></a> (Integration)
+
+> NOTE: Integration APIs may change.
+
+Symbol for accessing built-in IPC client. Used by libraries and other integrations.
+
+```js
+const ipc = Pear[Pear.constructor.IPC]
+```
+
+### `Pear.constructor.RUNTIME` <a name="pear-constructor-runtime"></a> (Integration)
+
+> NOTE: Integration APIs may change.
+
+The runtime binary to spawn when running. Used by [`pear-run`](https://github.com/holepunchto/pear-run). Useful for certain testing scenarios.
+
+### `Pear.constructor.RUNTIME_ARGV` <a name="pear-constructor-runtime_argv"></a> (Integration)
+
+> NOTE: Integration APIs may change.
+
+Used to modify argv passed spawn when running. Used by [`pear-run`](https://github.com/holepunchto/pear-run). Useful for certain testing scenarios.
+
+
+### <mark style="background-color: #ffffa2;" name="pear-restart">**DEPRECATED**</mark> `Pear.restart()`
+
+Deprecated. Use [`pear-restart`](https://github.com/holepunchto/pear-restart).
+
+### <mark style="background-color: #ffffa2;" name="pear-config">**DEPRECATED**</mark> `Pear.config <Object>`
+
+Deprecated. Use [`Pear.app`](#pear-app).
+
+### <mark style="background-color: #ffffa2;" name="pear-messages">**DEPRECATED**</mark> `Pear.messages([ pattern ], [ listener ]) -> Iterable`
+
+Deprecated. Use [`pear-messages`](https://github.com/holepunchto/pear-messages).
+
+### <mark style="background-color: #ffffa2;" name="pear-message">**DEPRECATED**</mark> `await Pear.message(<Object>)`
+
+Deprecated. Use [`pear-message`](https://github.com/holepunchto/pear-message).
+
+### <mark style="background-color: #ffffa2;" name="pear-worker">**DEPRECATED**</mark> `Pear.worker <Object>`
+
+Deprecated. Use [`pear-run`](https://github.com/holepunchto/pear-run) & [`pear-pipe`](https://github.com/holepunchto/pear-pipe).
+
+Deprecated. Use [`pear-pipe`](https://github.com/holepunchto/pear-pipe).
+
+### <mark style="background-color: #ffffa2;" name="pear-media">**DEPRECATED**</mark> `Pear.media <Object>`
+
+Deprecated. Use [`pear-electron ui.media`](https://github.com/holepunchto/pear-electron#uimedia-object-).
+
+### <mark style="background-color: #ffffa2;" name="pear-versions">**DEPRECATED**</mark> `Pear.versions <Async Function>`
+
+Outputs version information.
+
+Example:
+
+```js
+{
+  platform: {
+    key: 'pzcjqmpoo6szkoc4bpkw65ib9ctnrq7b6mneeinbhbheihaq6p6o',
+    length: 5949,
+    fork: 0
+  },
+  app: { key: null, length: 0, fork: 0 },
+  runtimes: { bare: '1.24.3', pear: '2.2.6' }
+}
+```
+
+### <mark style="background-color: #ffffa2;" name="pear-reload">**DEPRECATED**</mark> `Pear.reload()`
+
+Deprecated. Use `location.reload()` in Desktop apps. No reload in terminal apps.
+
+### <mark style="background-color: #ffffa2;" name="pear-updates">**DEPRECATED**</mark> `Pear.updates(listener <Async Function|Function>) =>streamx.Readable`
+
+Deprecated. Use [`pear-updates`](https://github.com/holepunchto/pear-updates).
+
+### <mark style="background-color: #ffffa2;" name="pear-updated">**DEPRECATED**</mark> `const update = await Pear.updated()`
+
+Deprecated. No-op. Do not use.
+
+### <mark style="background-color: #ffffa2;" name="pear-wakeups">**DEPRECATED**</mark> `Pear.wakeups(listener <Async Function|Function>) =>streamx.Readable`
+
+Deprecated. Use [`pear-updates`](https://github.com/holepunchto/pear-wakeups).
+
+### <mark style="background-color: #ffffa2;" name="pear-badge">**DEPRECATED**</mark> `Pear.badge(count <Integer|null>) =>Promise<Boolean>`
+
+Deprecated. Use [`pear-electron ui.app.badge()`](https://github.com/holepunchto/pear-electron#const-success--await-uiappbadgecount-integernull-).
+
+### <mark style="background-color: #ffffa2;" name="pear-tray">**DEPRECATED**</mark> `Pear.tray(options <Object>, listener <AsyncFunction|Function>) => Promise<untray()>`
+
+Deprecated. Use [`pear-electron ui.app.tray()`](https://github.com/holepunchto/pear-electron#const-untray--await-uiapptrayoptions-object-listener-function-).
+
+### <mark style="background-color: #ffffa2;" name="pear-window">**DEPRECATED**</mark> `const win = new Pear.Window(entry <String>, options<Object>)`
+
+Deprecated. Use [`pear-electron ui.Window`](https://github.com/holepunchto/pear-electron#const-win--new-uiwindowentry-string-options-object-).
+
+### <mark style="background-color: #ffffa2;" name="pear-view">**DEPRECATED**</mark> `const view = new Pear.View(options <Object>)`
+
+Deprecated. Use [`pear-electron ui.View`](https://github.com/holepunchto/pear-electron#const-view--new-uiviewoptions-object-).
+
+## `global.Bare`<a name="globalbare"></a>
+
+<mark style="background-color: #8484ff;">**stable**</mark>
+
+The core JavaScript API of Bare is available through the global `Bare` namespace.
+
+The `Bare` API is designed to be as minimal as possible.
+
+The majority of capabilities are supplied via [Bare Modules](../README.md#bare-modules).
+
+### `Bare.platform`<a name="bare-platform"></a>
+
+The identifier of the operating system for which Bare was compiled. The possible values are `android`, `darwin`, `ios`, `linux`, and `win32`.
+
+### `Bare.arch`<a name="bare-arch"></a>
+
+The identifier of the processor architecture for which Bare was compiled. The possible values are `arm`, `arm64`, `ia32`, `mips`, `mipsel`, and `x64`.
+
+### `Bare.simulator`<a name="bare-simulator"></a>
+
+Whether or not Bare was compiled for a simulator.
+
+### `Bare.argv`<a name="bare-argv"></a>
+
+The command line arguments passed to the process when launched.
+
+### `Bare.pid`<a name="bare-pid"></a>
+
+The ID of the current process.
+
+### `Bare.exitCode`<a name="bare-exitcode"></a>
+
+The code that will be returned once the process exits. If the process is exited using `Bare.exit()` without specifying a code, `Bare.exitCode` is used.
+
+### `Bare.suspended`<a name="bare-suspended"></a>
+
+Whether or not the process is currently suspended.
+
+### `Bare.exiting`<a name="bare-exiting"></a>
+
+Whether or not the process is currently exiting.
+
+### `Bare.version`<a name="bare-version"></a>
+
+The Bare version string.
+
+### `Bare.versions`<a name="bare-versions"></a>
+
+An object containing the version strings of Bare and its dependencies.
+
+### `Bare.exit([code])`<a name="bare-exit"></a>
+
+Immediately terminate the process or current thread with an exit status of `code` which defaults to `Bare.exitCode`.
+
+### `Bare.suspend([linger])`<a name="bare-suspend"></a>
+
+Suspend the process and all threads. This will emit a `suspend` event signalling that all work should stop immediately. When all work has stopped and the process would otherwise exit, an `idle` event will be emitted. If the process is not resumed from an `idle` event listener, the loop will block until the process is resumed.
+
+### `Bare.idle()`<a name="bare-idle"></a>
+
+Immediately suspend the event loop and trigger the `idle` event.
+
+### `Bare.resume()`<a name="bare-resume"></a>
+
+Resume the process and all threads after suspension. This can be used to cancel suspension after the `suspend` event has been emitted and up until all `idle` event listeners have run.
+
+### `Bare.on('uncaughtException', err)`<a name="bare-on-uncaught-exception"></a>
+
+Emitted when a JavaScript exception is thrown within an execution context without being caught by any exception handlers within that execution context. By default, uncaught exceptions are printed to `stderr` and the processes aborted. Adding an event listener for the `uncaughtException` event overrides the default behavior.
+
+### `Bare.on('unhandledRejection', reason, promise)`<a name="bare-on-unhandled-rejection"></a>
+
+Emitted when a JavaScript promise is rejected within an execution context without that rejection being handled within that execution context. By default, unhandled rejections are printed to `stderr` and the process aborted. Adding an event listener for the `unhandledRejection` event overrides the default behavior.
+
+### `Bare.on('beforeExit', code)`<a name="bare-on-beforeexit"></a>
+
+Emitted when the loop runs out of work and before the process or current thread exits. This provides a chance to schedule additional work and keep the process from exiting. If additional work is scheduled, `beforeExit` will be emitted again once the loop runs out of work.
+
+If the process is exited explicitly, such as by calling `Bare.exit()` or as the result of an uncaught exception, the `beforeExit` event will not be emitted.
+
+### `Bare.on('exit', code)`<a name="bare-on-exit"></a>
+
+Emitted when the process or current thread exits. If the process is forcefully terminated from an `exit` event listener, the remaining listeners will not run.
+
+> [!CAUTION]
+> Additional work **MUST NOT** be scheduled from an `exit` event listener.
+
+### `Bare.on('suspend', linger)`<a name="bare-on-suspend"></a>
+
+Emitted when the process or current thread is suspended. Any in-progress or outstanding work, such as network activity or file system access, should be deferred, cancelled, or paused when the `suspend` event is emitted and no additional work should be scheduled.
+
+### `Bare.on('idle')`<a name="bare-on-idle"></a>
+
+Emitted when the process or current thread becomes idle after suspension. After all handlers have run, the event loop will block and no additional work be performed until the process is resumed. An `idle` event listener may call `Bare.resume()` to cancel the suspension.
+
+### `Bare.on('resume')`<a name="bare-on-resume"></a>
+
+Emitted when the process or current thread resumes after suspension. Deferred and paused work should be continued when the `resume` event is emitted and new work may again be scheduled.
+
+## `Bare.Addon`<a name="bare-addon"></a>
+
+The `Bare.Addon` namespace provides support for loading native addons, which are typically written in C/C++ and distributed as shared libraries.
+
+### `const addon = Addon.load(url[, options])`<a name="bare-addon-load"></a>
+
+Load a static or dynamic native addon identified by `url`. If `url` is not a static native addon, Bare will instead look for a matching dynamic object library.
+
+Options are reserved.
+
+### `const unloaded = Addon.unload(url[, options])`<a name="bare-addon-unload"></a>
+
+Unload a dynamic native addon identified by `url`. If the function returns `true`, the addon was unloaded from memory. If it instead returns `false`, the addon is still in use by one or more threads and will only be unloaded from memory when those threads either exit or explicitly unload the addon.
+
+Options are reserved.
+
+### `const url = Addon.resolve(specifier, parentURL[, options])`<a name="bare-addon-resolve"></a>
+
+Resolve a native addon specifier by searching for a static native addon or dynamic object library matching `specifier` imported from `parentURL`.
+
+Options are reserved.
+
+## `Bare.Thread`<a name="bare-thread"></a>
+
+The `Bare.Thread` provides support for lightweight threads. Threads are similar to workers in Node.js, but provide only minimal API surface for creating and joining threads.
+
+### `Thread.isMainThread`<a name="bare-thread-ismainthread"></a>
+
+`true` if the current thread is the main thread.
+
+### `Thread.self`<a name="bare-thread-self"></a>
+
+A reference to the current thread as a `ThreadProxy` object. Will be `null` on the main thread.
+
+### `Thread.self.data`<a name="bare-self-data"></a>
+
+A copy of or, if shared, reference to the `data` buffer that was passed to the current thread on creation. Will be `null` if no buffer was passed.
+
+### `const thread = new Thread([filename][, options][, callback])`<a name="bare-new-thread"></a>
+
+Start a new thread that will run the contents of `filename`. If `callback` is provided, its function body will be treated as the contents of `filename` and invoked on the new thread with `Thread.self.data` passed as an argument.
+
+Options include:
+
+```js
+{
+  // Optional data to pass to the thread
+  data: null,
+  // Optional file source, will be read from `filename` if neither `source` nor `callback` are provided
+  source: string | Buffer,
+  // Optional source encoding if `source` is a string
+  encoding: 'utf8',
+  // Optional stack size in bytes, pass 0 for default
+  stackSize: 0
+}
+```
+
+### `const thread = Thread.create([filename][, options][, callback])`<a name="bare-thread-create"></a>
+
+Convenience method for the `new Thread()` constructor.
+
+### `thread.joined`<a name="bare-new-thread-joined"></a>
+
+Whether or not the thread has been joined with the current thread.
+
+### `thread.join()`<a name="bare-new-thread-join"></a>
+
+Block and wait for the thread to exit.
+
+### `thread.suspend([linger])`<a name="bare-new-thread-suspend"></a>
+
+Suspend the thread. Equivalent to calling `Bare.suspend()` from within the thread.
+
+### `thread.resume()`<a name="bare-new-thread-resume"></a>
+
+Resume the thread. Equivalent to calling `Bare.resume()` from within the thread.
+
+
+
+================================================
+FILE: reference/bare-overview.md
+================================================
+# Bare
+
+Small and modular JavaScript runtime for desktop and mobile. Like Node.js, it provides an asynchronous, event-driven architecture for writing applications in the lingua franca of modern software. Unlike Node.js, it makes embedding and cross-device support core use cases, aiming to run just as well on your phone as on your laptop. The result is a runtime ideal for networked, peer-to-peer applications that can run on a wide selection of hardware.
+
+```sh
+npm i -g bare
+```
+
+## Usage
+
+```console
+bare [flags] <filename> [...args]
+
+Evaluate a script or start a REPL session if no script is provided.
+
+Arguments:
+  <filename>            The name of a script to evaluate
+  [...args]             Additional arguments made available to the script
+
+Flags:
+  --version|-v          Print the Bare version
+  --eval|-e <script>    Evaluate an inline script
+  --print|-p <script>   Evaluate an inline script and print the result
+  --inspect             Activate the inspector
+  --help|-h             Show help
+```
+
+The specified `<script>` or `<filename>` is run using `Module.load()`. For more information on the module system and the supported formats, see <https://github.com/holepunchto/bare-module>.
+
+## Architecture
+
+Bare is built on top of <https://github.com/holepunchto/libjs>, which provides low-level bindings to V8 in an engine independent manner, and <https://github.com/libuv/libuv>, which provides an asynchronous I/O event loop. Bare itself only adds a few missing pieces on top to support a wider ecosystem of modules:
+
+1. A module system supporting both CJS and ESM with bidirectional interoperability between the two.
+2. A native addon system supporting both statically and dynamically linked addons.
+3. Light-weight thread support with synchronous joins and shared array buffer support.
+
+Everything else if left to userland modules to implement using these primitives, keeping the runtime itself succint and _bare_. By abstracting over both the underlying JavaScript engine using `libjs` and platform I/O operations using `libuv`, Bare allows module authors to implement native addons that can run on any JavaScript engine that implements the `libjs` ABI and any system that `libuv` supports.
+
+## API
+
+Bare makes it easy to craft applications that can run effectively across a broad spectrum of devices. To get started, find the Bare API specs [here](./api.md).
+
+### Modules
+
+Bare provides no standard library beyond the core JavaScript API available through the `Bare` namespace. Instead, there is a comprehensive collection of external modules built specifically for Bare, see [Bare Modules](../README.md#bare-modules)
+
+### Embedding
+
+Bare can easily be embedded using the C API defined in [`include/bare.h`](https://github.com/holepunchto/bare/blob/main/include/bare.h):
+
+```c
+#include <bare.h>
+#include <uv.h>
+
+bare_t *bare;
+bare_setup(uv_default_loop(), platform, &env /* Optional */, argc, argv, options, &bare);
+
+bare_load(bare, filename, source, &module /* Optional */);
+
+bare_run(bare);
+
+int exit_code;
+bare_teardown(bare, &exit_code);
+```
+
+If `source` is `NULL`, the contents of `filename` will instead be read at runtime. For examples of how to embed Bare on mobile platforms, see [Bare Android](https://github.com/holepunchto/bare-android) and [Bare iOS](https://github.com/holepunchto/bare-ios).
+
+### Suspension
+
+Bare provides a mechanism for implementing process suspension, which is needed for platforms with strict application lifecycle constraints, such as mobile platforms. When suspended, a `suspend` event will be emitted on the `Bare` namespace. Then, when the loop has no work left and would otherwise exit, an `idle` event will be emitted and the loop blocked, keeping it from exiting. When the process is later resumed, a `resume` event will be emitted and the loop unblocked, allowing it to exit when no work is left.
+
+The suspension API is available through `bare_suspend()` and `bare_resume()` from C and `Bare.suspend()` and `Bare.resume()` from JavaScript.
+
+## Building
+
+<https://github.com/holepunchto/bare-make> is used for compiling Bare. Start by installing the tool globally:
+
+```console
+npm i -g bare-make
+```
+
+Next, install the required build and runtime dependencies:
+
+```console
+npm i
+```
+
+Then, generate the build system:
+
+```console
+bare-make generate
+```
+
+This only has to be run once per repository checkout. When updating `bare-make` or your compiler toolchain it might also be necessary to regenerate the build system. To do so, run the command again with the `--no-cache` flag set to disregard the existing build system cache:
+
+```console
+bare-make generate --no-cache
+```
+
+With a build system generated, Bare can be compiled:
+
+```console
+bare-make build
+```
+
+When completed, the `bare(.exe)` binary will be available in the `build/bin` directory and the `libbare.(a|lib)` and `(lib)bare.(dylib|dll|lib)` libraries will be available in the root of the `build` directory.
+
+### Linking
+
+When linking against the static `libbare.(a|lib)` library, make sure to use whole archive linking as Bare relies on constructor functions for registering native addons. Without whole archive linking, the linker will remove the constructor functions as they aren't referenced by anything.
+
+### Options
+
+Bare provides a few compile options that can be configured to customize various aspects of the runtime. Compile options may be set by passing the `--define option=value` flag to the `bare-make generate` command when generating the build system.
+
+> [!WARNING]  
+> The compile options are not covered by semantic versioning and are subject to change without warning.
+
+| Option           | Default                    | Description                                             |
+| :--------------- | :------------------------- | :------------------------------------------------------ |
+| `BARE_ENGINE`    | `github:holepunchto/libjs` | The JavaScript engine to use                            |
+| `BARE_PREBUILDS` | `ON`                       | Enable prebuilds for supported third-party dependencies |
+
+## Platform support
+
+Bare uses a tiered support system to manage expectations for the platforms that it targets. Targets may move between tiers between minor releases and as such a change in tier will not be considered a breaking change.
+
+**Tier 1:** Platform targets for which prebuilds are provided as defined by the [`.github/workflows/prebuild.yml`](https://github.com/holepunchto/bare/blob/main/.github/workflows/prebuild.yml) workflow. Compilation and test failures for these targets will cause workflow runs to go red.
+
+**Tier 2:** Platform targets for which Bare is known to work, but without automated compilation and testing. Regressions may occur between releases and will be considered bugs.
+
+> [!NOTE]  
+> Development happens primarily on Apple hardware with Linux and Windows systems running as virtual machines.
+
+| Platform  | Architecture | Version                              | Tier | Notes                       |
+| :-------- | :----------- | :----------------------------------- | :--- | :-------------------------- |
+| GNU/Linux | `arm64`      | >= Linux 5.15, >= GNU C Library 2.35 | 1    | Ubuntu 22.04, OpenWrt 23.05 |
+| GNU/Linux | `x64`        | >= Linux 5.15, >= GNU C Library 2.35 | 1    | Ubuntu 22.04, OpenWrt 23.05 |
+| GNU/Linux | `arm64`      | >= Linux 5.10, >= musl 1.2           | 2    | Alpine 3.13, OpenWrt 22.03  |
+| GNU/Linux | `x64`        | >= Linux 5.10, >= musl 1.2           | 2    | Alpine 3.13, OpenWrt 22.03  |
+| GNU/Linux | `mips`       | >= Linux 5.10, >= musl 1.2           | 2    | OpenWrt 22.03               |
+| GNU/Linux | `mipsel`     | >= Linux 5.10, >= musl 1.2           | 2    | OpenWrt 22.03               |
+| Android   | `arm`        | >= 9                                 | 1    |
+| Android   | `arm64`      | >= 9                                 | 1    |
+| Android   | `ia32`       | >= 9                                 | 1    |
+| Android   | `x64`        | >= 9                                 | 1    |
+| macOS     | `arm64`      | >= 11.0                              | 1    |
+| macOS     | `x64`        | >= 11.0                              | 1    |
+| iOS       | `arm64`      | >= 14.0                              | 1    |
+| iOS       | `x64`        | >= 14.0                              | 1    | Simulator only              |
+| Windows   | `arm64`      | >= Windows 11                        | 1    |
+| Windows   | `x64`        | >= Windows 10                        | 1    |
+
+
+================================================
+FILE: reference/cli.md
+================================================
+# Command Line Interface (CLI)
+
+<mark style="background-color: #8484ff;">**stable**</mark>
+
+The Command Line Interface is the primary interface for Pear Development.
+
+## `pear init [flags] <link|name> [dir]`<a name="pear-init"></a>
+
+Create initial project files.
+
+Links: `pear://electron/template`, `pear://your.key.here/your/path/here`
+
+Names: default, ui, node-compat
+
+> Default Project directory path is `.`
+
+Template can also be initialized from a pear:// link, the template should contain a `_template.json` file. This file defines the prompts which are converted to locals that are injected into the template.
+
+```
+--yes|-y                  Autoselect all defaults
+--force|-f                Force overwrite existing files
+--no-ask                  Suppress permissions dialogs
+--help|-h                 Show help
+```
+
+## `pear run [flags] <link|dir> [...app-args]`<a name="pear-run"></a>
+
+Run an application from a link or dir.
+
+|       |                                                   |
+|-------|---------------------------------------------------|
+| link  | `pear://<key>`  \| `pear://<alias>`                |
+| dir   | `file://<absolute-path>` \| `<absolute-path>` \| `<relative-path>` |
+
+
+```
+  --dev|-d                       Enable --devtools & --updates-diff
+  --devtools                     Open devtools with application [Desktop]
+  --updates-diff                 Enable diff computation for Pear.updates
+  --no-updates                   Disable updates firing via Pear.updates
+  --link=url                     Simulate deep-link click open
+  --store|-s=path                Set the Application Storage path
+  --tmp-store|-t                 Automatic new tmp folder as store path
+  --links <kvs>                  Override configured links with comma-separated key-values
+  --chrome-webrtc-internals      Enable chrome://webrtc-internals
+  --unsafe-clear-app-storage     Clear app storage
+  --appling=path                 Set application shell path
+  --checkout=n                   Run a checkout, n is version length
+  --checkout=release             Run checkout from marked released length
+  --checkout=staged              Run checkout from latest version length
+  --detached                     Wakeup existing app or run detached
+  --no-ask                       Suppress permissions dialogs
+  --help|-h                      Show help
+```
+
+### Examples
+
+```
+pear run pear://u6c6it1hhb5serppr3tghdm96j1gprtesygejzhmhnk5xsse8kmy
+```
+
+```
+pear run -s /tmp/app-storage path/to/an-app-folder some --app args
+```
+
+```
+pear run -t file://path/to/an-app-folder --some app --args
+```
+
+```
+pear run pear://keet
+```
+
+## `pear stage <channel|link> [dir]`<a name="pear-stage"></a>
+
+Synchronize local changes to channel or key.
+
+Channel name must be specified on first stage, in order to generate the initial key. This key is unique to the combination of the application name, the channel name and the device's unique corestore key. This means the key does not change after the first time the channel is staged.
+
+Outputs diff information and project link.
+
+Each time new changes are staged, the length for the channel / link will update, hence updating the version. This change can be replicated to any peer who know the link and is connected. If they run `pear info <link>`, they will see the `length` update even if the application is not being seeded. Connections can potentially linger after seeding an application but will eventually close.
+
+```
+  --dry-run|-d       Execute a stage without writing
+  --ignore <paths>   Comma-separated path ignore list
+  --purge            Remove ignored files if present in previous stage
+  --compact|-c       Tree-shaking minimal stage via static-analysis
+  --only <paths>     Filter by paths. Comma-separated
+  --truncate <n>     Advanced. Truncate to version length n
+  --name <name>      Advanced. Override app name
+  --no-ask           Suppress permission prompt
+  --no-pre           Skip pre scripts
+  --pre-io           Show stdout & stderr of pre scripts
+  --pre-q            Suppress piped output of pre scripts
+  --json             Newline delimited JSON output
+  --help|-h          Show help
+```
+
+## `pear seed <channel|link> [dir]`<a name="pear-seed"></a>
+
+Seed project or reseed key.
+
+Specify channel or link to seed a project or a remote link to reseed.
+
+Seeding will sparsely replicate the application. This means the entire history of the channel or link is available, but most likely only the most recent version will be replicated. For more info, read ["Lazy loading large files & sparse replication"](../guide/sharing-a-pear-app.md#lazy-loading-large-files-and-sparse-replication) section in the "Sharing a Pear Application" guide.
+
+```
+  --verbose|-v     Additional output
+  --name <name>    Advanced. Override app name
+  --no-ask         Suppress permission prompt
+  --json           Newline delimited JSON output
+  --help|-h        Show help
+```
+
+## `pear release <channel|link> [dir]`<a name="pear-release"></a>
+
+Set production release version.
+
+Set the release pointer against a version (default latest).
+
+Use this to indicate production release points. Once a channel or link has been released (setting a pointer for a given version) running the application (via `pear run <link>`) will load the application at the released version even if more changes were staged.
+
+```
+  --checkout=n|current     Set a custom release length (version)
+  --json                   Newline delimited JSON output
+  --help|-h                Show help
+```
+
+### Release rollbacks
+
+Releases can generally be rolled back in one of two ways. First by updating the release pointer to a previous length using the `--checkout` flag. For example:
+
+- Release "A" for channel `production` was at length `500`
+- Release "B" for channel `production` was at length `505`
+
+The release can be rolled back to "A" (aka length `500`) via the following command:
+
+```console
+pear release --checkout 500 production
+```
+
+This method doesn't add any file changes so will not show update diffs from the previous release version.
+
+The second approach is dumping the files from the previous version and staging and rereleasing the new version. This appends file changes so is heavier than just changing the release pointer, but shows update diffs and fits the [dump-stage-release strategy](../guide/releasing-a-pear-app.md) approach since updates to the `production` channel are applied by dumping from another channel or link.
+
+## `pear info [link|channel]`<a name="pear-info"></a>
+
+
+Read project information.
+
+Supply a link or channel to view application information.
+
+Supply no argument to view platform information.
+
+```
+  --metadata       View metadata only
+  --manifest       View app manifest only
+  --key            View key only
+  --no-ask         Suppress permission prompt
+  --json           Newline delimited JSON output
+  --help|-h        Show help
+```
+
+## `pear dump [flags] <link> <dir>`<a name="pear-dump"></a>
+
+Synchronize files from link to dir.
+
+> To dump to stdout use `-` in place of `<dir>`
+
+`<link>` can contain a path portion to dump a subset of the files for the Pear application. For example, to dump only the `CHANGELOG.md` from Keet into a `dump-dir` directory run:
+
+```
+pear dump pear://keet/CHANGELOG.md dump-dir/
+```
+
+```
+  --dry-run|-d     Execute a dump without writing
+  --checkout <n>   Dump from specified checkout, n is version length
+  --only <paths>   Filter by paths. Implies --no-prune. Comma-seperated
+  --force|-f       Force overwrite existing files
+  --list           List paths at link. Sets <dir> to -
+  --no-ask         Suppress permission prompt
+  --no-prune       Prevent removal of existing paths
+  --json           Newline delimited JSON output
+  --help|-h        Show help
+```
+
+## `pear touch [flags] [channel]`<a name="pear-touch"></a>
+
+
+Create Pear link
+
+Creates a Pear Link using channel name if provided or else a randomly generated channel name.
+
+This command is useful for creating links for automations that use `pear stage <link>`, `pear release <link>` or `pear seed <link>`.
+
+```
+  --json      Newline delimited JSON output
+  --help|-h   Show help
+```
+
+## `pear sidecar`<a name="pear-sidecar"></a>
+
+
+The Pear Sidecar is a local-running HTTP and IPC server which
+provides access to corestores.
+
+This command instructs any existing sidecar process to shutdown
+and then becomes the sidecar.
+
+```
+  --mem                 memory mode: RAM corestore
+  --key <key>           Advanced. Switch release lines
+  --log-level <level>   Level to log at. 0,1,2,3 (OFF,ERR,INF,TRC)
+  --log-labels <list>   Labels to log (internal, always logged)
+  --log-fields <list>   Show/hide: date,time,h:level,h:label,h:delta
+  --log-stacks          Add a stack trace to each log message
+  --help|-h             Show help
+```
+
+## `pear versions`<a name="pear-versions"></a>
+
+Output version information.
+
+```
+--modules|-m   Include module versions
+--json         Single JSON object
+--help|-h      Show help
+```
+
+## `pear shift [flags] <source> <destination>`<a name="pear-shift"></a>
+
+
+Move user application storage between applications.
+
+`<source>` and `<destination>` are links.
+
+```
+--force     Overwrite existing application storage if present
+--json      Newline delimited JSON output
+--help|-h   Show help
+```
+
+## `pear drop [flags] [command]`<a name="pear-drop"></a>
+
+Advanced. Permanent data deletion
+
+WARNING: Confirmation will be requested as the storage will be deleted permanently and cannot be recovered. Use with caution.
+
+| Commands |           Description                          |
+|----------|------------------------------------------------|
+| app      | Reset an application to initial state          |
+
+```
+--json      Newline delimited JSON output
+--help|-h   Show help
+```
+
+## `pear gc [flags] [command]`<a name="pear-gc"></a>
+
+Perform garbage collection and remove unused resources.
+
+| Commands      |           Description                                        |
+|-------|---------------------------------------------------|
+| releases   | Clear inactive releases                       |
+| sidecars   |  Clear running sidecars                       |
+| assets     |  Clear synced assets                          |
+| cores      |  corestore cores                              |
+
+```
+  --json        Newline delimited JSON output
+  --help|-h     Show help
+```
+
+## `pear data [flags] [command]`<a name="pear-data"></a>
+
+View database contents.
+
+The database contains metadata stored on this device used by the Pear runtime.
+
+| Commands   | Description                |
+| ---------- | -------------------------- |
+| apps       | Installed apps             |
+| dht        | DHT known-nodes cache      |
+| gc         | Garbage collection records |
+| manifest   | Database internal versioning |
+| assets     | On-disk assets for app     |
+| currents   | Current working versions   |
+
+```
+--secrets   Show sensitive information, i.e. encryption-keys
+--json      Newline delimited JSON output
+--help|-h   Show help
+```
+
+
+
+================================================
+FILE: reference/configuration.md
+================================================
+# Configuration
+
+<mark style="background-color: #8484ff;">**stable**</mark>
+
+## The `package.json` file<a name="package-json"></a>
+
+A Pear project **must** have a `package.json` file and a main entry file.
+
+The `package.json` file **must** have either a `name` property or `pear` object with a `name` property.
+
+The `package.json` `name` field must be lowercase and one word, and may contain letters, numbers, hyphens (`-`), underscores (`_`), forward slashes (`/`) and asperands (`@`).
+
+The `package.json` file may also contain a `main` field, which typically should point to an HTML file. If omitted, `index.html` or `index.js` is the default entry file depending on application type.
+
+Any other fields (such as `dependencies`) may also be present in the `package.json` file.
+
+The `package.json` `pear` object contains application configuration and is exposed via the API as `pear.config.options`.
+
+Pear versioning is automatic. The `package.json` file does **not** require a version field, the version field will be ignored.
+
+## The `package.json` `pear` field.<a name="pear"></a>
+
+### `pear.name <String>`<a name="pear-name"></a>
+
+The name of the application. Overrides `package.json` `name`.
+
+### `pear.stage <Object>`<a name="pear-stage"></a>
+
+Staging configuration options.
+
+#### `pear.stage.entrypoints <Array>`<a name="pear-stage-entrypoints"></a>
+
+An array of entrypoint paths as staging start-points in addition to (deduped) main entry point.
+
+#### `pear.stage.ignore <Array>`<a name="pear-stage-ignore"></a>
+
+An array of file paths to ignore relative to `package.json` file.
+
+#### `pear.stage.includes <Array>`<a name="pear-stage-includes"></a>
+
+Explicitly declare paths to include.
+
+Ensures warmup during staging in addition to all `stage.entrypoints` which can improve application start time.
+
+When used with `pear stage --compact` command flag `pear.stage.includes` can be used to ensure any files that aren't recognized via JavaScript static analysis - which would be any non-JavaScript files, any files that aren't required/imported or any files that are imported/required using an expression in code - eg `require(getPkgName())` would mean
+whatever is required wouldn't be identified in static analysis so would need to be added to `pear.stage.includes`.
+
+#### `pear.stage.defer <Array>`<a name="pear-stage-defer"></a>
+
+An array of dependency specifiers, as used with `require` or `import`, to declare it as an uninstalled optional or peer dependency in the dependency tree. Some modules use the pattern: `try { require('a-dep') } catch { fallback() }`, in order to try to include an optional dependency if available. Adding such specifiers (`a-dep` in the example) to the `pear.stage.defer` configuration array let's the static-analysis steps during `pear stage` (compact and warmup phases) step over these cases. If there are a lot of cases like this in an applications dependency tree, it will slow the static-analysis phases down since by default it brute forces and grows a dynamic defers list until there's no MODULE_NOT_FOUND errors left. The `pear stage` command will print out skip hints for these dependencies - add any specifiers identified to `pear.stage.defer`.
+
+### `pear.pre <String>`<a name="pear-pre"></a>
+
+A specifier such as `./path/to/pre.js` or `some-module`, or `pear-electron/pre`.
+
+The specifier must point to a script that executes prior to run-from-disk, prior to stage but **not** prior to run-from-link:
+
+* `pear run ./some-dir` - `pre` specifier executes prior
+* `pear stage ./some-dir` - `pre` specifier executes prior
+* `pear run pear://some/link` - `pre` specifier **does not** execute
+
+When a `pre` script is executed, it has a `pipe` available which can be obtained via [`pear-pipe`](https://github.com/holepunchto/pear-pipe). This can be used to modify configuration which is sent as [`compact-encoding`](https://github.com/holepunchto/compact-encoding) `any` encoding (i.e. an encoded object, like JSON). The first encoded object sent to `pipe` is the application configuration. The first response expected on the pre scripts `pipe` by the `pear run` or `pear stage` command is an `any` encoded configuration object. This allows the prescript to send back mutated application configuration back to `pear run` or `pear stage`. The application is then loaded with that mutated confiruation in the case of `pear run`, in the case of `pear stage` the configuration overrides the application drives `manifest` property. The `pear info --manifest <link>` command can be used to view any mutated configuration post-stage.
+
+### `pear.routes <Object|String>`<a name="pear-routes"></a>
+
+By default, [`pear run`](./cli.md#pear-run) considers link pathnames to be entrypoints. This means `pear run` can execute any valid file staged to a Pear application. For example `pear run pear://<key>/some/path.js` would run some/path.js if it's valid. In that case [`Pear.app.route`](./api.md#pear-app-route) would contain `/some/path.js` and [`Pear.app.entrypoint`](./api.md#pear-app-entrypoint) would also contain `/some/path.js`.
+
+To opt-out, and only allow top-level running set `Pear.routes` to `.` or `/` (it means the same thing):
+
+```json
+{
+  "pear": {
+    "routes": "."
+  }
+}
+```
+
+This redirects all paths to the entrypoint.
+
+In this case `pear run pear://<key>/some/path.js` would run the application entrypoint, [`Pear.app.route`](./api.md#pear-app-route) would contain `/some/path.js` while [`Pear.app.entrypoint`](./api.md#pear-app-entrypoint) would also be `/` - because `Pear.app.route` holds the raw pathname whereas `Pear.app.entrypoint` holds the mapped pathname.
+
+The `pear.routes` configuration can also be an object where the keys are pathnames to map from, and the values are pathnames to map to:
+
+```json
+{
+  "pear": {
+    "routes": {
+      "/from/path": "/to/path"
+    }
+  }
+}
+```
+
+When `routes: "."` is used in conjuction with [`pear-electron`](https://github.com/holepunchto/pear-electron) and [`pear-bridge` `waypoint` option](https://github.com/holepunchto/pear-bridge/#options) this enables in-app single-page-application routing.
+
+
+### `pear.unrouted <Array>`<a name="pear-unrouted"></a>
+
+Array of paths to exclude from any routing rules in [`pear.routes`](#pear-routes).
+
+
+### `pear.assets <Object>`<a name="pear-assets"></a>
+
+Asset declarations to fetch and store on disk on behalf of the application.
+
+By convention namespaces (the object keys) should be used to describe the asset type.
+
+In particular, Desktop applications should use the `ui` namespace to declare UI assets.
+
+Asset objects take the form `{link, name?, only?}`.
+
+* `link` `<String>` - Required. The  `pear://<fork>.<length>.<key>` link to fetch the assets from. The link must contain the full version (`fork.length.key`)
+* `name` `<String>` - Optional. Used in UI integration libraries such as [`pear-electron`](https://github.com/holepunchto/pear-electron) to determine bin name.
+* `only` `<Array<String>>` - Optional. An array of drive keys (pathnames) to exclusively fetch from the link with interpolation support for a special `%%HOST%%` keyword which is mapped to `<platform>-<architecture>` as in: `linux-x64`, `darwin-arm64` etc. This is useful for asset builds per OS and CPU architecture.
+
+Example:
+
+```JSON
+{
+  "pear": {
+    "assets": {
+      "ui": {
+        "link": "pear://0.940.pkzpbccx8ojp4516p7abompuhyj5gcpqfux1s9e7e4zzcdhyhdto",
+        "name": "Pear Runtime",
+        "only": [
+          "/boot.bundle",
+          "/by-arch/%%HOST%%",
+          "/prebuilds/%%HOST%%"
+        ]
+      }
+    }
+  }
+}
+```
+
+The `pear.assets` config isn't just for User Interface runtimes, such as [`pear-electron`](https://github.com/holepunchto/pear-electron), it's for any assets that needs to be placed on disk for some reason, such as llms, prebuilds, other runtimes/binaries.
+
+Declared assets are updated onto user machines passively while the application is running.
+Initial assets are fetched by `pear run` on first-run but application installers/distributables call `pear run --preflight <link>` to ensure the assets are in place prior to first-run.
+
+While assets can be declared directly on the `pear.assets` as described but when used in combination with [`pear.pre`](#pear-pre), installable modules such as [`pear-electron`](https://github.com/holepunchto/pear-electron) can also automatically define assets (and other configuration) on behalf of the application.
+
+Assets are automatically stored in the platform folder. Use [`Pear.app.assets[namespace].path`](./api.md#pear-app-assets) within the application to get the path to the asset. For example, `Pear.assets.ui.path`.
+
+###  `pear.links <Object|Array>`<a name="pear-links"></a>
+
+Storing and managing Pear application links and domains.
+
+`links` can be an object or an array. If it's an object, naming the key makes it easy to reference from [`Pear.config.links`](./api.md#pear-config)
+
+By default in Pear apps, only requests to the sidecar host (127.0.0.1:9342) are allowed. Additional hosts and trusted keys must be added in `pear.links` to allow access.
+
+Any Pear links that the app trusts to run (eg as a worker) must be added and any http(s) domains that the app wants to access must also be added, including localhost.
+
+Adding `"https://*"` or `"http://*"` will trust all domains based on their respective protocol.
+
+Note that this is only for requests that the Pear app makes itself such as loading assets.
+
+```json
+{
+  // ...
+  "pear": {
+    // accessed at runtime using Pear.config.links[index] eg. Pear.config.links[0] for pear://somePearKey
+    "links": [
+      "pear://somePearKey",
+      "https://example.com"
+    ]
+    // OR
+    // accessed at runtime using Pear.config.links.name eg. Pear.config.links.myWorker for myWorker
+    "links": {
+      "myWorker": "pear://somePearKey",
+      "host": "https://example.com"
+    }
+  }
+}
+```
+
+### `pear.gui <Object>`<a name="pear-gui"></a>
+
+Graphical User Interface configuration options.
+
+This is a namespace reserved for UI integration libraries to use for configuration options.
+
+Defined per UI Integration library.
+
+* [pear-electron pear.gui](https://github.com/holepunchto/pear-electron#graphical-user-interface-options-)
+
+
+#### <mark style="background-color: #ffffa2;">**DEPRECATED**</mark> `pear.stage.prefetch <Array>`
+
+Deprecated, use `pear.stage.includes`.
+
+### <mark style="background-color: #ffffa2;">**DEPRECATED**</mark> `pear.userAgent <string>` (default: `Pear ${Pear.#state.id}`)
+
+Deprecated. Use `pear.gui.userAgent` per [pear-electron pear.gui](https://github.com/holepunchto/pear-electron#graphical-user-interface-options-)
+
+
+================================================
+FILE: reference/faq.md
+================================================
+# Frequently Asked Questions
+
+## How Do I Get a List of Pear Applications I've Installed?
+
+Running the following command in the terminal will list installed applications;
+
+```console
+pear data apps
+```
+
+It will return a list like the following:
+
+```
+- pear://keet
+    storage: ./pear/app-storage/by-dkey/197ea022b663edbedcf0b2a0fe44ebc99c21448cb46d375ec77d95de6e0a4c1a
+
+- pear://runtime
+    storage: ./pear/app-storage/by-dkey/50f2c1326de970da319534164017f23101c6badd5497a99045f8d9ef13978995
+
+- pear://38cna455dbguiatg46z98cs7b6p4t4sh6hskozuhmipmpkxmmeuy
+    storage: ./pear/app-storage/by-dkey/be6ff2fc20eb691af1ff7b90d5848ee1e22d2fe4fab031900e1014e224f659ab
+```
+
+For more information about the `pear data apps` command, see the [cli docs](./cli.md#pear-data).
+
+## How Do I Uninstall a Pear Application?
+
+Uninstalling Pear Applications is currently not supported. You can reset the storage for an application via the `pear drop <link>` command. This is a **destructive** command that will permanently delete the storage for the application loosing all data it contains. Use with caution.
+
+For more information about the `pear drop` command, see the [cli docs](./cli.md#pear-drop).
+
+## Where is the Pear Application stored?
+
+The Pear framework, applications and their storage are all within the `pear` directory. The directory's path depends on the operating system:
+
+| OS      | Pear Path                            |
+| ------- | ------------------------------------ |
+| MacOs   | `~/Library/Application Support/pear` |
+| Linux   | `~/.config/pear`                     |
+| Windows | `%userprofile%\AppData\Roaming\pear` |
+
+This path can be accessed in a Pear application via [`Pear.config.pearDir`](./api.md#pear-config).
+
+Within the `pear` directory the Pear framework itself is stored where the `current` symlink points, Pear applications are stored in the `corestores` directory, and Pear application storage (aka [`Pear.config.storage`](./api.md#pear-config) for applications) are stored in `app-storage`.
+
+Note that Pear applications and the Pear platform are stored in a [`corestore`](https://github.com/holepunchto/corestore) as [`hyperdrive`](https://github.com/holepunchto/hyperdrive)s so are not easily inspectable via a file explorer. To see the files distributed with an application use [`pear dump`](./cli.md#pear-dump) to dump its contents as files.
+
+## Can Pear be used with X language?
+
+Pear applications currently can only be written in JavaScript, but other languages and libraries can be integrated by adding bindings as a native addon. See the [`bare-addon`](https://github.com/holepunchto/bare-addon) for a template to get started creating a native addon for Bare runtime.
+
+For languages like TypeScript that compile to JavaScript, it is recommended to compile into JavaScript and then load it as the Javascript entrypoint either as the `main` property for a terminal application or as a `<script>` in the HTML entrypoint for a desktop application. For more information about configuring the entrypoint for Pear Application see [here](./configuration.md#package-json).
+
+## How Do I Write an Application Once So It Can Be Run on Desktop, Mobile, etc?
+
+The recommendation is to write Pear applications with all the business logic and peer-to-peer (P2P) code in what is called the "Pear-end". This is a separate worker/worklet thread that communicates to the user interface (UI) via an inter-process communication (IPC) stream. By abstracting the UI from the Pear-end, the Pear-end can be reused across all versions of the application with only the UI code changing.
+
+At the moment, the `Pear` Application Programming Interface (API) is not supported in mobile applications. This will change as Pear v2 comes out which uses the separation of Pear-end and UI as the default.
+
+## How is my Application Distributed? Do I have to keep the `seed` command running?
+
+Pear applications are distributed via the swarm so that any peer with the application will reseed it to other peers when they are running the application. To speed up and facilitate replication, it is recommended to run the `pear seed <link>` command to ensure a peer is online and seeding the application.
+
+## Why Is NPM Used For Dependencies?
+
+NPM is a great package manager, many JavaScript developers are already familiar with it and all Holepunch's packages are published on NPM. Dependencies installed in your app should be staged with the Application and then are replicated via the swarm. It is recommended to do a dry run when staging to review the changes to the application. This will include all the changes to the dependencies and so can be used to audit them looking for unexpected updates.
+
+After you install the `pear` via NPM and complete the setup, NPM and Node.js are no longer required to run Pear terminal applications. The `pear` package on NPM is only used to bootstrap the Pear platform. After the setup the `pear` command is using Bare to run the Pear application.
+
+## How Do I Distribute a Binary Version of My Application?
+
+You can make a binary version of a Pear applications using the [`pear-appling`](https://github.com/holepunchto/pear-appling/) template repository. This repository can be configure in `CMakeLists.txt`, providing the metadata for your application, and compiled for MacOS, Linux and Windows. The compiled output is a small binary used to bootstrap the Pear platform and the application replicating the most recent version of them. This way you rarely, if ever, need to recompile your binary. Any future user can download it and will be able to run the most recent version of your application after replicating.
+
+## Can Peers Know My IP Address When Using `hyperswarm` or Swarming a Pear Application?
+
+Your IP is exchanged with peers so that they can connect to you. If you want to protect your IP, it is recommended to use a VPN.
+
+
+
+================================================
+FILE: reference/migration.md
+================================================
+# Migration
+
+Pear v2 introduces a breaking change to the application entrypoint and includes several API deprecations.
+
+Pear v1 supports HTML entrypoints, while Pear v2 supports only JavaScript entrypoints.
+
+## Migration Scenarios
+
+There are two migratory scenarios:
+
+* Pre-transitional Migration: a Pear v1 application, preparing to migrate to Pear v2 prior to Pear v2 release
+* Post-transitional Migration: a Pear v1 application updating to Pear v2 after Pear v2 release has occurred
+
+In both cases the Migration Strategy will work.
+
+## Migration Strategy
+
+To prepare a Pear Desktop Application written for Pear v1 to seamlessly migrate to v2 prior to v2 release use the following strategy:
+
+1. Ensure the project `package.json` `main` field is **unset** and ensure that the HTML entry file is named `index.html`.
+2. Install dependencies: `npm install pear-electron pear-bridge`
+3. Set `package.json` `pear.pre` field to `pear-electron/pre`
+4. Add an `index.js` file that uses `pear-electron` and `pear-bridge`:
+
+```js
+import Runtime from 'pear-electron'
+import Bridge from 'pear-bridge'
+
+const bridge = new Bridge()
+await bridge.ready()
+
+const runtime = new Runtime()
+const pipe = await runtime.start({ bridge })
+pipe.on('close', () => Pear.exit())
+```
+
+Install the dependencies:
+
+```sh
+npm install pear-electron pear-bridge
+```
+
+### Explanation
+
+List numbers correspond as explanations for items in Pear v1 to Pear v2 Pre-transitional Migration Strategy.
+
+1. v1 supports `.html` `main` fields, v2 only supports `.js` fields. This approach relies on `index.html` (v1) and `index.js` (v2) `main` field defaults so that when the update occurs from v1 to v2 there's no validation issue on the `main` field and the entrypoint exists whichever version of Pear the app is running on.
+2. `pear-electron` is the UI library for v2, `pear-bridge` provides http-p2p functionality for electron, installing them into a v1 application makes it v2 ready prior to v2 release.
+3. `pear.pre` is a v2 feature that runs pre-run (from disk) and pre-stage. `pear-electron/pre` is a script that autosets `pear.assets.ui` and `pear.stage.entrypoints` (for html script tag entrypoint warmups)
+4. v2 applications only run `.js` files. The `index.js` file starts desktop application code in electron UI.
+
+## Config Migration
+
+The `package.json` `pear` field supplies configuration information for Pear applications.
+
+* `pear.userAgent` -> `pear.gui.userAgent`
+* `pear.gui.hideable` -> `pear.gui.closeHides`
+
+When preparing for v2 in advance, both fields must be present:
+
+```json
+"pear": {
+  "userAgent": "custom user agent",
+  "gui": {
+    "userAgent": "custom user agent",
+    "hideable": true,
+    "closesHides": true
+  }
+}
+```
+
+### Route-Handling Migration
+
+If applications are performing route handling, in v2 it is necessary for an application to opt-in to routing.
+
+In v1 when a `pear://` link is clicked outside of the application (e.g. in another app), or supplied to `pear run` the application is either opened, or sent a wakeup notification if already open.
+
+When the application is opened, `Pear.config.linkData` contains the pathname of the `pear://` link, excluding the leading `/`. For example pear://runtime/pathname/to/some/where `linkData` would be `pathname/to/some/where`.
+
+When woken, `Pear.updates((wakeup) => {})` provides `wakeup.linkData`.
+
+In v2 `linkData` is still available in both cases, but soft-deprecated in favor of v2 routing:
+
+* `Pear.app.entrypoint` & `wakeup.entrypoint` - full pathname: pear://runtime/pathname/to/some/where -> `/pathname/to/some/where`. The `entrypoint` is mapped per `pear.routes` configuration.
+* `Pear.app.fragment` & `wakeup.fragment` - location hash without `#`: pear://runtime/pathname#something -> `something`
+* `Pear.app.query` & `wakeup.query` - query string without `?`. pear://runtime/pathname?some-query -> `some-query`
+
+To opt-in fully to v1 behavior the catch-all `routes` config can be used:
+
+```json
+{
+  "pear": {
+    "routes": "."
+  }
+}
+```
+
+## API Migration
+
+The Pear v2 API deprecates all UI related methods now exported from `pear-electron` and a few others that have been moved to modules or renamed.
+
+### `Pear` -> `ui`
+
+```js
+import ui from 'pear-electron'
+```
+
+* `Pear.media` -> `ui.media`
+* `Pear.tray` -> `ui.app.tray`
+* `Pear.badge` -> `ui.app.badge`
+* `Pear.Window` -> `ui.Window`
+* `Pear.View` -> `ui.View`
+* `Pear.Window.self` / `Pear.View.self` -> `ui.app`
+
+### `Pear` -> `pear-*`
+
+* `Pear.worker.run` -> [`pear-run`](https://github.com/holepunchto/pear-run)
+* `Pear.worker.pipe` -> [`pear-pipe`](https://github.com/holepunchto/pear-pipe)
+* `Pear.message` -> [`pear-message`](https://github.com/holepunchto/pear-message)
+* `Pear.messages` -> [`pear-messages`](https://github.com/holepunchto/pear-messages)
+* `Pear.wakeups` -> [`pear-wakeups`](https://github.com/holepunchto/pear-wakeups)
+* `Pear.updates` -> [`pear-updates`](https://github.com/holepunchto/pear-updates)
+
+### `Pear`
+
+* `Pear.config` -> `Pear.app`
+* `Pear.reload` -> `location.reload`
+
+## Verifying Migration
+
+Verify in development with
+
+ ```sh
+ pear run -d .
+ ```
+
+Production equivalent verification:
+
+```sh
+pear stage check
+```
+
+Then per link output from stage command:
+
+```sh
+pear run <link>
+```
+
+If the application starts and operates correctly in any related areas where changes have been made, then migration is verified.
+
+If the SemVer printed by `pear -v` is 2.x.x then migration verification is complete.
+
+If the SemVer printed by `pear -v` is 1.x.x then these steps need to performed on v2 also.
+
+Switch to v2 with:
+
+```sh
+pear sidecar --key pzcjqmpoo6szkoc4bpkw65ib9ctnrq7b6mneeinbhbheihaq6p6o
+```
+
+This will run the current sidecar in the terminal and switch to the v2 release line per the supplied key.
+
+The command should output something similar to:
+
+```sh
+- Closing any current Sidecar clients...
+- Shutting down current Sidecar...
+✔ Sidecar has shutdown
+- Rebooting current process as Sidecar
+  - [ pqbzjhqyonxprx8hghxexnmctw75mr91ewqw5dxe1zmntfyaddqy ]
+- Runtime: pear-runtime
+
+========================= INIT ===================================
+
+- Sidecar Booting [+0ms]
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✔ Current process is now Sidecar
+- Version: {
+    "key": "pqbzjhqyonxprx8hghxexnmctw75mr91ewqw5dxe1zmntfyaddqy",
+    "length": 9195,
+    "fork": 0
+  }
+
+========================= RUN ====================================
+
+- Switching to key pzcjqmpoo6szkoc4bpkw65ib9ctnrq7b6mneeinbhbheihaq6p6o with length 2371... [+261.4711ms]
+Platform update Available. Restart to update to: [+367.2348ms]
+ v0.2371.pzcjqmpoo6szkoc4bpkw65ib9ctnrq7b6mneeinbhbheihaq6p6o [+0.0349ms]
+- DHT known-nodes read from database 100 nodes [+4631.6207ms]
+- Drive bundle pzcjqmpoo6szkoc4bpkw65ib9ctnrq7b6mneeinbhbheihaq6p6o core length: 2371 [+5.1877ms]
+- Sidecar swarm joining discovery key of pzcjqmpoo6szkoc4bpkw65ib9ctnrq7b6mneeinbhbheihaq6p6o [+0.0797ms]
+- Sidecar Booted [+1.1023ms]
+```
+
+Once the "Restart to update" message is observed, use ctrl+c to close the sidecar and then run `pear -v` to verify that the key is correct. If it isn't, try again. If it is, verify the application on v2.
+
+Verify in development with
+
+ ```sh
+ pear run -d .
+ ```
+
+Production equivalent verification:
+
+```sh
+pear stage check
+```
+
+Then per link output from stage command:
+
+```sh
+pear run -d <link>
+```
+
+If the application starts and operates correctly, then migration is verified.
+
+Once verified, switch back to production:
+
+```sh
+pear sidecar --key pqbzjhqyonxprx8hghxexnmctw75mr91ewqw5dxe1zmntfyaddqy
+```
+
+If there's any problems switching back, make sure there are no `pear-runtime` processes running and run `npx pear`.
+
+>  ⚠️ **WARNING:** Omitting to switch back to production Pear leaves the system on a release-line that will be ended.
+>
+>  **In order to avoid any issues, be sure to switch back to production [ pqbzjhqyonx... ]**
+>
+
+## Compat Mode<a name="compat-mode"></a>
+
+While v1 Pear APIs will continue to function with deprecation messages, for projects that need a legacy-bridge during overlapping transitional periods, compat-mode can be used to:
+
+* Silence deprecation warnings
+* Ensure legacy methods to continue to function after their removal for a longer time period
+* Limit ability to use new APIs in future
+* Eventually itself be deprecated & removed
+
+Compat mode is a temporary transitioning utility, if usage can be avoided in favour of moving to the equivalent methods this avoids potential for legacy lock-in.
+
+Enable with `<script>Pear.constructor.COMPAT = true</script>` at the top of the `<head>` element in the HTML entrypoint and `Pear.constructor.COMPAT = true` at the top of worker or terminal app entrypoints.
+
+Compat mode isn't needed for premigration, only if time is needed for the application to transition to equivalent v2 APIs.
+
+
+================================================
+FILE: reference/node-compat.md
+================================================
+# Node.js Compatibility
+
+Pear's native runtime is [Bare](https://github.com/holepunchto/bare).
+
+Pear, via Bare, offers compatibility with Node.js codebases.
+
+The majority of the Node.js API surface used by developers can be supported using `bare-*` modules and `package.json` import maps.
+
+## Import Maps
+
+For example, given a Node.js module using `fs`, the `package.json` `imports` field should look like so:
+
+```json
+{
+  "imports": {
+    "node:fs": {
+      "fs": {
+        "bare": "bare-fs",
+        "default": "fs"
+      }
+    },
+    "fs": {
+      "bare": "bare-fs",
+      "default": "fs"
+    },
+    "fs/*": {
+      "bare": "bare-fs/*",
+      "default": "fs/*"
+    }
+  },
+  "dependencies": {
+    "bare-fs": "^2.1.5"
+  }
+}
+```
+
+## Runtime Module Mapping using the `with.imports` pragma
+
+Import maps apply to the same scope as the `package.json` - that is, the module scope. It does not override any dependencies that may be using core Node.js modules. For example, the app had a dependency that was using `fs` and the `package.json` has an imports map that maps `fs` to `bare-fs`, the `with.imports` pragma can be used to apply the same import mappings at module loading time:
+
+```js
+import depThatUsesFs from 'dep-that-uses-fs' with { imports: './package.json' }
+```
+
+```js
+const depThatUsesFs = require('dep-that-uses-fs', { with:  { imports: './package.json' } })
+```
+
+This will override `fs` with `bare-fs` down the entire dependency tree from `dep-that-uses-fs`.
+
+This is useful for converting higher-level Node.js libraries and applications to Pear & Bare without having to modify every dependency in the tree using Node.js core APIs while declaring import maps in the package.json of modules is ideal for creating hybrid modules that support Node.js, Bare & Pear out of the gate.
+
+## Node.js Globals
+
+By design, Bare & Pear lack a `global.process` object.
+
+When creating a hybrid module, importing or requiring [`bare-process`](https://github.com/holepunchto/bare-process) and using it should be enough. But if a  module or application relies on a global process object then `bare-process/global` can be imported/required to set the process global.
+
+## Deviant Mappings
+
+Most Node.js core API modules names map to suffixes of [bare-* modules](../README.md#bare-modules) with a few exceptions:
+
+* `http` -> [`bare-http1`](https://github.com/holepunchto/bare-http1)
+* `child_process` -> [`bare-subprocess`](https://github.com/holepunchto/bare-subprocess)
+  * NOTE: If using `detached` option, use [`bare-daemon`](https://github.com/holepunchto/bare-daemon) instead
+
+
+================================================
+FILE: reference/recommended-practices.md
+================================================
+# Recommended Practices
+
+This article covers useful patterns that one should follow in most cases when
+developing Pear applications.
+
+## Use One Corestore Instance Per Application
+
+Corestores are meant to manage many cores and their sessions efficiently. Having multiple Corestore instances can cause issues such as file locking errors when using the same storage and duplicate core storage if the same core is used by two Corestores with different storages.
+
+A single Corestore instance will:
+
+- Reduces open file handles.
+- Reduces storage space by deduping hypercore storage.
+- Requires only one replication stream per peer.
+
+If using `name`d cores that collide across different components of an app is an issue, use namespaces (`store.namepace('a')`) to create a namespaced version of a Corestore. Note that retrieving cores by `key` are unaffected by namespacing.
+
+## Use One Hyperswarm Instance Per Application
+
+Hyperswarm supports joining multiple topics on the same instance and will dedup peer connections shared between them. Having only one swarm instance will speed up connections by reducing records in the DHT for the topic and simplify managing the max number of connections an app makes.
+
+## Never Load Javascript Over HTTP(S)
+
+Just like in web development, running code from an external source is dangerous. Running external code opens an application up to being exploited if the external source is nefarious or compromised. This is why http and https traffic is blocked by default in Pear applications, preventing unintentional loading of code that would make your application vulnerable to supply chain attacks. This is especially dangerous for applications, like Pear applications, that have access to native functionality (eg. the file system).
+
+## Exclude Development Dependencies when staging applications
+
+When staging an application, all files in the root directory that are not explicitly ignored will be included in the application bundle. Development dependencies are not required at runtime and should therefore be excluded to reduce bundle size and improve performance. To remove them before staging, run:
+
+```
+npm prune --omit=dev
+```
+
+This ensures that only the necessary production dependencies are included in the final bundle.
+
+## Exclude the .git Directory
+
+The `.git` directory is excluded by default. However, if a custom `ignore` field is defined in the application's `stage` configuration, this overrides the default ignore rules. In such cases, you must explicitly include `.git` in the ignore list to ensure it remains excluded.
+
+
+
+================================================
+FILE: reference/templates.md
+================================================
+# Templates
+
+The `pear init` command can be used to generate a project from a template.
+
+This document describes how to create a template for `pear init`.
+
+See [pear-templates](https://github.com/holepunchto/templates) for a collection of reference templates.
+
+## Declaring Locals
+
+A local is any text within double underscores eg `__author__`. This includes filenames, for example `__foo__.js` would be rendered per the value of `foo` as supplied via user prompts, eg if the user supplied `bar` as a response to the `foo` prompt then `__foo__.js` would render as `bar.js`.
+
+## Describing Prompts
+
+A Pear Template must have a `_template.json` file.
+
+The `_template.json` file must contains an object with a `params` field which defines user prompts:
+
+```json
+{
+  "params": [...]
+}
+```
+
+Each param is an object describing the user prompt, possible param values:
+
+* `name` - Required. `String`. Corresponds to a declared local.
+* `prompt` - `String`. The prompt label to display to the user
+* `default` - Value default
+* `override` - `Array<String>`. An array representing path to a configuration option that, if set, overrides the value supplied by the user. Useful for re-rendering. Example: ["pear", "gui", "height"] would over a height prompt if the config value is already set.
+* `shave` - `Array<n,n>`. A two-element array representing offsets to remove chars beyond the boundaries of the declared local. Useful for numbers which will, due to user input being strings, be interleaved as strings - using [-1, 1] for such cases shaves the quotes off of pre-validated numbers within strings.
+* `validation` - `String`. A string holding a function of form `"(value) => Boolean"`. Evaluates prompt input, returns `true` if valid, `false` if not.
+* `msg` - `String`. Validation failure message to display.
+
+The `_template.json` file won't be rendered into the resulting project, all other files will.
+
+## Developing Templates
+
+In the `pear init <link>` command a `link` can be a directory.
+
+```sh
+pear init ./path/to/template some-output-dir
+```
+
+## Deploying Templates
+
+To make it possible to initialize a template peer-to-peer from any machine, stage and seed it like any other Pear Project:
+
+```sh
+cd ./path/to/template
+pear stage production
+pear seed production
+```
+
+The `pear stage` command will output a `pear://<key>` link. Initialize the template from that link on any machine:
+
+```sh
+pear init pear://<key>
+```
+
+
+
+
+
+================================================
+FILE: reference/troubleshooting.md
+================================================
+# Troubleshooting
+
+* [Pear](#pear)
+* [Bare](#bare)
+
+## Pear<a name="pear"></a>
+
+Troubleshooting confusing scenarios while developing Pear applications.
+
+### `Pear.teardown` Callback Fires But Worker Keeps Running
+
+The `Pear.teardown(cb)` callback is triggered whenever the Pear app start to unload. If it is not exiting, then something is keeping the applications event loop running. A common cause of this is not cleaning up the [worker pipe](./api.md#pear-worker) by calling `pipe.end()` to gracefully end the writable part of the stream.
+
+### `pear` CLI Exits Without Running the Application
+
+If after debugging an application it seems the issue is happening in the Pear platform itself, try the following steps to debug the issue:
+
+1. Run pear command with logs enabled `pear --log [command]`.
+2. If no helpful info, run sidecar with logs `pear sidecar --log-level 3`.
+   If the `pear sidecar` stops after printing `Closing any current Sidecar clients...`, then the current Pear Sidecar process is hanging. Check the next steps for forensics that might explain why, but then kill existing Pear processes.
+   _Note_ that this will close any running pear applications such as Keet.
+3. If still no helpful info, check that there are still pear processes running via `ps aux | grep pear` or equivalent method for finding processes by name.
+4. Finally check the crash logs in platform's `current` directory.
+   - For sidecar: `sidecar.crash.log`
+   - For electron: `electron-main.crash.log`
+   - For pear cli: `cli.crash.log`
+
+### You get a `Error: While lock File .. Resource temporarily unavailable`
+
+The Error:
+```
+Uncaught (in promise) Error: While lock file: ./pear/app-storage/by-random/.../db/LOCK: Resource temporarily unavailable
+    at Object.onopen (pear://dev/node_modules/rocksdb-native/lib/state.js:155:27)
+```
+
+Means the application is trying to open a RockDB instance on files currently
+locked by another process. This means either:
+
+- An application is trying to open the same storage twice.
+  If using `Corestore`, it is recommended to only create only one instance and
+  reusing it.
+- There are multiple of processes running for the same application.
+
+### Joining a Hyperswarm Topic takes a long time
+
+There can be many reasons but here are a few common reasons:
+
+- Random NAT networks can take longer as another node may be needed to facility the connection.
+- Not destroying the hyperswarm instance in the `Pear.teardown()` callback so
+  Hyperswarm can unannounce and clean up the DHT.
+  It's recommended to clean up the hyperswarm instance with `swarm.destroy()` before exiting the application. This prevents conflicting records in the DHT for the application's peer which cause it take longer to join a topic.
+
+  Example:
+  ```js
+  Pear.teardown(() => swarm.destroy())
+  ```
+
+  Make sure to unregister the teardown callback if the swarm is destroyed
+  prematurely.
+
+- A firewall is blocking the traffic.
+  Please let Holepunch know if this is the case.
+
+### Running Bare modules in Pear Desktop Applications
+
+For now this is not possible because Pear desktop applications run in Electron which uses Node.js integration. Pear v2 will unify running Pear applications in Bare with Electron as a UI module. This way the main application will be defined as a "Pear-end" process that can be shared across different versions of the application such as CLI, GUI, mobile, etc.
+
+Running a Bare module will give you one of the following errors:
+
+- `Uncaught TypeError: require.addon is not a function`
+- `Uncaught ReferenceError: Bare is not defined`
+
+To support both Bare and Node.js compatible modules, import maps can be defined
+so a module `fs` can be resolved to `bare-fs` on Bare and `fs` on Node.js.
+
+```
+{
+  "imports": {
+    "fs": {
+      "bare": "bare-fs",
+      "default": "fs"
+    },
+    "fs/*": {
+      "bare": "bare-fs/*",
+      "default": "fs/*"
+    }
+  },
+  "dependencies": {
+    "bare-fs": "^2.1.5"
+  }
+}
+```
+
+See [`bare-node`'s "Import maps"](https://github.com/holepunchto/bare-node#import-maps) for more details.
+
+## Bare<a name="bare"></a>
+
+Troubleshooting confusing scenarios while developing Pear applications.
+
+### Missing builtin Modules when Running with Bare
+
+Bare is minimal by design, so does not include all of the modules provided with Node.js. Instead modules such as `process` can be imported as a Bare specific module, for example `bare-process`. For a list of Node.js builtins and their Bare replacements, check out `bare-node`'s ["Modules" table](https://github.com/holepunchto/bare-node#modules)
+
+#### Writing a module with Support for Bare & Node.js
+
+If writing a library that can be run in both the Bare and Node.js runtimes, import maps should be used to support both the Bare version and the Node.js version of builtin modules. Import maps only apply to the `package.json`'s package so does not modify dependencies of the module.
+
+See [`bare-node`'s "Import maps"](https://github.com/holepunchto/bare-node#import-maps) for more details.
+
+#### Running 3rd Party Modules Written for Node.js
+
+To support dependencies that rely on Node.js builtins (eg. `fs`, `os`, etc), an alias can be used to point to a wrapper module to use the Bare version. For example to use `bare-net` where ever `net` is used in dependencies, install it as an alias:
+
+```
+npm i bare-net net@npm:bare-node-net
+```
+
+See [Node.js Compatibility](./node-compat) for more info.
+
+For compatibility and to support builtin globals, such as `process`, the corresponding `bare-*` module will include a `/global.js` submodule that sets the global variable to `global`. This is useful when importing modules that assume the global variable exists. It is not recommended to use global variables when writing new code as it is less flexible and a harder to upgrade piecemeal.
+
+Usage of a globals submodule looks like:
+
+```
+require('bare-process/global')
+console.log('platform', process.platform) // now prints
+```
+
+### `AddonError: ADDON_NOT_FOUND: Cannot find addon` when running Bare
+
+As the error suggests, this is because the native addon cannot be found. This could either be because the addon is missing or Bare is looking in a different place than expected.
+
+A few reasons why an addon may be missing:
+
+- The addon is not available for the current platform and/or architecture.
+  To see what platform and architecture Bare is running on, log `Bare.platform` and `Bare.arch`.
+- The addon wasn't linked ahead of time.
+  Mobile applications require native code to be linked as part of compiling the application.
+
+  If developing with `react-native-bare-kit` (including using `bare-expo` as a template), check that the addon was loaded in `node_modules/react-native-bare-kit/ios/addons` for iOS and `node_modules/react-native-bare-kit/android/src/main/addons` for Android. This is where the libraries are linked from.
+
+  If other solutions are not working, it may be an issue with the build cache. Try clearing the cache and recompiling.
+
+### `bare-pack` with conditional module loading
+
+[`bare-pack`](https://github.com/holepunchto/bare-pack) does not evaluate your code but scans for imports. This means it cannot infer dynamic imports but assumes all imports will be loaded for the target platform. For example:
+
+```
+const { runtime } = require('which-runtime')
+
+let crypto
+if (runtime === 'bare') {
+  crypto = require('bare-crypto')
+} else {
+  crypto = require('node:crypto')
+}
+```
+
+Will thrown:
+
+```
+./node_modules/paparam/index.js:514
+    throw new Bail(bail.reason)
+          ^
+
+Bail: ModuleTraverseError: MODULE_NOT_FOUND: Cannot find module 'node:crypto' imported from 'file://./index.js'
+    at exports.imports (./node_modules/bare-module-traverse/index.js:331:24)
+    at exports.imports.next (<anonymous>)
+    at exports.module (./node_modules/bare-module-traverse/index.js:152:18)
+    at exports.module.next (<anonymous>)
+    at process (./node_modules/bare-pack/index.js:50:26)
+    at async pack (./node_modules/bare-pack/index.js:24:3)
+    at async Command._runner (./node_modules/bare-pack/bin.js:46:18)
+    at async runAsync (./node_modules/paparam/index.js:793:5)
+    at Command._bail (./node_modules/paparam/index.js:514:11)
+    at Command.bail (./node_modules/paparam/index.js:127:36)
+    at runAsync (./node_modules/paparam/index.js:795:7)
+```
+
+This is because it is trying to pack `node:crypto` for Bare which isn't possible.
+
+Instead of dynamic conditions based on runtime environment, modules should have an import map defined to use the correct module for the given runtime.
+
+See [`bare-node`'s "Import maps"](https://github.com/holepunchto/bare-node#import-maps) for more details.
+
+
+
+
+
+================================================
+FILE: tools/drives.md
+================================================
+[https://github.com/holepunchto/drives](https://github.com/holepunchto/drives)
+
+
+
+================================================
+FILE: tools/hyperbeam.md
+================================================
+[https://github.com/holepunchto/hyperbeam](https://github.com/holepunchto/hyperbeam)
+
+
+
+================================================
+FILE: tools/hypershell.md
+================================================
+[https://github.com/holepunchto/hypershell](https://github.com/holepunchto/hypershell)
+
+
+
+================================================
+FILE: tools/hyperssh.md
+================================================
+[https://github.com/holepunchto/hyperssh](https://github.com/holepunchto/hyperssh)
+
+
+
+================================================
+FILE: tools/hypertele.md
+================================================
+[https://github.com/bitfinexcom/hypertele](https://github.com/bitfinexcom/hypertele)
+
+

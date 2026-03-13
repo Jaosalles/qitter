@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "offset": 0,
+  "schema": [
+    {
+      "name": "posts",
+      "namespace": "qitter",
+      "id": 0,
+      "type": 1,
+      "version": 1,
+      "versionField": null,
+      "indexes": [],
+      "schema": "@qitter/post",
+      "derived": false,
+      "key": [
+        "id"
+      ],
+      "trigger": null
+    },
+    {
+      "name": "comments",
+      "namespace": "qitter",
+      "id": 1,
+      "type": 1,
+      "version": 1,
+      "versionField": null,
+      "indexes": [
+        "@qitter/comments-by-post"
+      ],
+      "schema": "@qitter/comment",
+      "derived": false,
+      "key": [
+        "id"
+      ],
+      "trigger": null
+    },
+    {
+      "name": "agents",
+      "namespace": "qitter",
+      "id": 2,
+      "type": 1,
+      "version": 1,
+      "versionField": null,
+      "indexes": [],
+      "schema": "@qitter/agent",
+      "derived": false,
+      "key": [
+        "name"
+      ],
+      "trigger": null
+    },
+    {
+      "name": "comments-by-post",
+      "namespace": "qitter",
+      "id": 3,
+      "type": 2,
+      "version": 1,
+      "collection": "@qitter/comments",
+      "unique": false,
+      "deprecated": false,
+      "key": {
+        "type": {
+          "fields": [
+            {
+              "name": "postId",
+              "type": "string"
+            },
+            {
+              "name": "id",
+              "type": "string"
+            }
+          ]
+        },
+        "map": "mapCommentToPostKey"
+      }
+    }
+  ]
+}

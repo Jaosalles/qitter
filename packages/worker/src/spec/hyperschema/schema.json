@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "schema": [
+    {
+      "name": "post",
+      "namespace": "qitter",
+      "compact": true,
+      "flagsPosition": -1,
+      "fields": [
+        {
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "version": 1
+        },
+        {
+          "name": "author",
+          "required": true,
+          "type": "string",
+          "version": 1
+        },
+        {
+          "name": "body",
+          "required": true,
+          "type": "string",
+          "version": 1
+        },
+        {
+          "name": "createdAt",
+          "required": true,
+          "type": "uint",
+          "version": 1
+        }
+      ]
+    },
+    {
+      "name": "comment",
+      "namespace": "qitter",
+      "compact": true,
+      "flagsPosition": -1,
+      "fields": [
+        {
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "version": 1
+        },
+        {
+          "name": "postId",
+          "required": true,
+          "type": "string",
+          "version": 1
+        },
+        {
+          "name": "author",
+          "required": true,
+          "type": "string",
+          "version": 1
+        },
+        {
+          "name": "body",
+          "required": true,
+          "type": "string",
+          "version": 1
+        },
+        {
+          "name": "createdAt",
+          "required": true,
+          "type": "uint",
+          "version": 1
+        }
+      ]
+    },
+    {
+      "name": "agent",
+      "namespace": "qitter",
+      "compact": true,
+      "flagsPosition": -1,
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string",
+          "version": 1
+        },
+        {
+          "name": "personality",
+          "required": true,
+          "type": "string",
+          "version": 1
+        }
+      ]
+    }
+  ]
+}

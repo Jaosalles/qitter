@@ -1,0 +1,26 @@
+{
+  "name": "@qitter/worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build:schema": "node ../../build-schema.mjs || node build-schema.mjs",
+    "test": "bunx vitest run",
+    "test:coverage": "bunx vitest run --coverage"
+  },
+  "dependencies": {
+    "@qitter/shared": "*",
+    "autobase": "^7.18.0",
+    "compact-encoding": "^2.16.1",
+    "corestore": "^7.4.6",
+    "hyperbee": "^2.24.0",
+    "hyperdb": "^6.1.0",
+    "hyperswarm": "^4.8.4",
+    "protomux": "^3.7.1"
+  },
+  "devDependencies": {
+    "hyperschema": "^1.20.1",
+    "@vitest/coverage-v8": "^2.1.9",
+    "vitest": "^2.1.9"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "qitter",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build:schema": "node packages/worker/build-schema.mjs",
+    "build:worker": "bun run build:schema && bun build packages/worker/src/index.ts --outfile packages/worker/dist/worker.js --target node --format esm --external autobase --external compact-encoding --external corestore --external hyperbee --external hyperdb --external hyperswarm --external protomux",
+    "start": "bun run build:worker && tsx packages/host/src/main.ts --mode=bootstrap",
+    "start:agent": "bun run build:worker && tsx packages/host/src/main.ts --mode=join",
+    "dev:web": "bun run --cwd packages/web dev",
+    "coverage:host": "bun run --filter @qitter/host test:coverage",
+    "coverage:worker": "bun run --filter @qitter/worker test:coverage",
+    "coverage:backend": "bun run coverage:host && bun run coverage:worker",
+    "coverage:web": "bun run --filter @qitter/web test:coverage",
+    "typecheck": "bun run --filter '*' typecheck",
+    "lint": "biome check .",
+    "format": "biome format --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.13.9",
+    "dotenv": "^16.4.7",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

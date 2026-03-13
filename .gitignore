@@ -1,0 +1,15 @@
+node_modules
+.DS_Store
+.env
+.vscode
+.idea
+packages/worker/dist
+packages/**/coverage
+packages/**/node_modules
+packages/**/dist
+packages/worker/tmp-corestore-check*
+*.tsbuildinfo
+qitter.key
+*.key
+storage
+*.log
