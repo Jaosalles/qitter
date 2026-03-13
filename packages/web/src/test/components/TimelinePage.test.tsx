@@ -33,13 +33,17 @@ describe("TimelinePage", () => {
     vi.mocked(useTimelineFeed).mockReturnValue({
       posts: [],
       loading: true,
+      loadingMore: false,
+      hasMore: false,
+      isRefreshing: false,
       error: null,
       refresh: vi.fn(),
+      loadMore: vi.fn(),
     });
 
     render(<TimelinePage interactive={interactive} />);
 
-    expect(screen.getByText("Loading the timeline...")).toBeInTheDocument();
+    expect(screen.getByLabelText("Loading timeline posts")).toBeInTheDocument();
   });
 
   it("renders error state", async () => {
@@ -47,8 +51,12 @@ describe("TimelinePage", () => {
     vi.mocked(useTimelineFeed).mockReturnValue({
       posts: [],
       loading: false,
+      loadingMore: false,
+      hasMore: false,
+      isRefreshing: false,
       error: "boom",
       refresh: vi.fn(),
+      loadMore: vi.fn(),
     });
 
     render(<TimelinePage interactive={interactive} />);
@@ -61,8 +69,12 @@ describe("TimelinePage", () => {
     vi.mocked(useTimelineFeed).mockReturnValue({
       posts: [],
       loading: false,
+      loadingMore: false,
+      hasMore: false,
+      isRefreshing: false,
       error: null,
       refresh: vi.fn(),
+      loadMore: vi.fn(),
     });
 
     render(<TimelinePage interactive={interactive} />);
@@ -72,7 +84,47 @@ describe("TimelinePage", () => {
     expect(screen.getByText("interactive-composer")).toBeInTheDocument();
     expect(screen.getByText("timeline-post-list")).toBeInTheDocument();
     expect(
-      screen.getByText("No posts yet. The agents are warming up and should publish soon."),
+      screen.getByText(
+        "No posts yet. The agents are warming up and should publish soon.",
+      ),
     ).toBeInTheDocument();
+  });
+
+  it("renders load older button when more pages are available", async () => {
+    const { useTimelineFeed } = await import("../../hooks/useTimelineFeed");
+    vi.mocked(useTimelineFeed).mockReturnValue({
+      posts: [{ id: "p1", author: "a", body: "b", createdAt: 1 }],
+      loading: false,
+      loadingMore: false,
+      hasMore: true,
+      isRefreshing: false,
+      error: null,
+      refresh: vi.fn(),
+      loadMore: vi.fn(),
+    });
+
+    render(<TimelinePage interactive={interactive} />);
+
+    expect(
+      screen.getByRole("button", { name: "Load older posts" }),
+    ).toBeInTheDocument();
+  });
+
+  it("renders syncing status during non-blocking refresh", async () => {
+    const { useTimelineFeed } = await import("../../hooks/useTimelineFeed");
+    vi.mocked(useTimelineFeed).mockReturnValue({
+      posts: [{ id: "p1", author: "a", body: "b", createdAt: 1 }],
+      loading: false,
+      loadingMore: false,
+      hasMore: false,
+      isRefreshing: true,
+      error: null,
+      refresh: vi.fn(),
+      loadMore: vi.fn(),
+    });
+
+    render(<TimelinePage interactive={interactive} />);
+
+    expect(screen.getByText("Syncing latest posts...")).toBeInTheDocument();
   });
 });

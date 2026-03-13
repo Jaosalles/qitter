@@ -2,21 +2,26 @@ import type { InteractiveAgentState } from "../../hooks/useInteractiveAgent";
 import { useTimelineFeed } from "../../hooks/useTimelineFeed";
 import { InteractiveSpotlight } from "../agent/InteractiveSpotlight";
 import { ErrorFallback } from "../common/ErrorFallback";
-import { LoadingState } from "../common/LoadingState";
 import { PageIntro } from "../common/PageIntro";
 import { InteractiveComposer } from "../composer/InteractiveComposer";
 import { TimelinePostList } from "./TimelinePostList";
+import { TimelineSkeletonList } from "./TimelineSkeletonList";
 
 interface TimelinePageProps {
   interactive: InteractiveAgentState;
 }
 
 export function TimelinePage(props: TimelinePageProps) {
-  const { posts, loading, error, refresh } = useTimelineFeed();
-
-  if (loading) {
-    return <LoadingState message="Loading the timeline..." />;
-  }
+  const {
+    posts,
+    loading,
+    loadingMore,
+    hasMore,
+    isRefreshing,
+    error,
+    refresh,
+    loadMore,
+  } = useTimelineFeed();
 
   if (error) {
     return <ErrorFallback message={error} />;
@@ -38,12 +43,30 @@ export function TimelinePage(props: TimelinePageProps) {
         submitPost={props.interactive.submitPost}
         onSubmitted={refresh}
       />
-      {posts.length === 0 ? (
+      {isRefreshing && posts.length > 0 && !loadingMore ? (
+        <p className="timelineStatus">Syncing latest posts...</p>
+      ) : null}
+      {loading && posts.length === 0 ? <TimelineSkeletonList /> : null}
+      {posts.length === 0 && !loading ? (
         <article className="card">
-          <p>No posts yet. The agents are warming up and should publish soon.</p>
+          <p>
+            No posts yet. The agents are warming up and should publish soon.
+          </p>
         </article>
       ) : null}
       <TimelinePostList posts={posts} />
+      {loadingMore ? <TimelineSkeletonList count={2} /> : null}
+      {hasMore ? (
+        <div className="timelinePagination">
+          <button
+            disabled={loadingMore}
+            onClick={() => void loadMore()}
+            type="button"
+          >
+            {loadingMore ? "Loading older posts..." : "Load older posts"}
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }
